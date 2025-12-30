@@ -1,0 +1,9 @@
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Data.SqlServer.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Data.SqlServer.pdb
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Data.SqlServer\obj\Release\Discuz.Data.SqlServer.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Data.SqlServer\obj\Release\Discuz.Data.SqlServer.pdb
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Data.SqlServer.dll
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Data.SqlServer.pdb
+G:\DiscuzNT\Discuz.Data.SqlServer\obj\Release\Discuz.Data.SqlServer.csprojResolveAssemblyReference.cache
+G:\DiscuzNT\Discuz.Data.SqlServer\obj\Release\Discuz.Data.SqlServer.dll
+G:\DiscuzNT\Discuz.Data.SqlServer\obj\Release\Discuz.Data.SqlServer.pdb

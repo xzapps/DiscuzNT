@@ -1,0 +1,10 @@
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Plugin.Mail.SysMail.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Plugin.Mail.SysMail.pdb
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Plugin.Mail.SysMail\obj\Release\Discuz.Plugin.Mail.SysMail.csprojResolveAssemblyReference.cache
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Plugin.Mail.SysMail\obj\Release\Discuz.Plugin.Mail.SysMail.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Plugin.Mail.SysMail\obj\Release\Discuz.Plugin.Mail.SysMail.pdb
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Plugin.Mail.SysMail.dll
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Plugin.Mail.SysMail.pdb
+G:\DiscuzNT\Discuz.Plugin.Mail.SysMail\obj\Release\Discuz.Plugin.Mail.SysMail.csprojResolveAssemblyReference.cache
+G:\DiscuzNT\Discuz.Plugin.Mail.SysMail\obj\Release\Discuz.Plugin.Mail.SysMail.dll
+G:\DiscuzNT\Discuz.Plugin.Mail.SysMail\obj\Release\Discuz.Plugin.Mail.SysMail.pdb

@@ -1,0 +1,9 @@
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Event.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Event.pdb
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Event\obj\Release\Discuz.Event.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Event\obj\Release\Discuz.Event.pdb
+G:\DiscuzNT\Discuz.Event\obj\Release\Discuz.Event.csprojResolveAssemblyReference.cache
+G:\DiscuzNT\Discuz.Event\obj\Release\Discuz.Event.pdb
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Event.dll
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Event.pdb
+G:\DiscuzNT\Discuz.Event\obj\Release\Discuz.Event.dll

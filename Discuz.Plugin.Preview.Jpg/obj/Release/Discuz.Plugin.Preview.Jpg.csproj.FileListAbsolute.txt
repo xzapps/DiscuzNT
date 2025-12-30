@@ -1,0 +1,10 @@
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Plugin.Preview.Jpg.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Plugin.Preview.Jpg.pdb
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Plugin.Preview.Jpg\obj\Release\Discuz.Plugin.Preview.Jpg.csprojResolveAssemblyReference.cache
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Plugin.Preview.Jpg\obj\Release\Discuz.Plugin.Preview.Jpg.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Plugin.Preview.Jpg\obj\Release\Discuz.Plugin.Preview.Jpg.pdb
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Plugin.Preview.Jpg.dll
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Plugin.Preview.Jpg.pdb
+G:\DiscuzNT\Discuz.Plugin.Preview.Jpg\obj\Release\Discuz.Plugin.Preview.Jpg.csprojResolveAssemblyReference.cache
+G:\DiscuzNT\Discuz.Plugin.Preview.Jpg\obj\Release\Discuz.Plugin.Preview.Jpg.dll
+G:\DiscuzNT\Discuz.Plugin.Preview.Jpg\obj\Release\Discuz.Plugin.Preview.Jpg.pdb
