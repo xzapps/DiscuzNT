@@ -1,0 +1,10 @@
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Plugin.Spread.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Plugin.Spread.pdb
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\plugin\Spread\obj\Release\Discuz.Plugin.Spread.csprojResolveAssemblyReference.cache
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\plugin\Spread\obj\Release\Discuz.Plugin.Spread.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\plugin\Spread\obj\Release\Discuz.Plugin.Spread.pdb
+G:\DiscuzNT\Discuz.Web\plugin\Spread\obj\Release\Discuz.Plugin.Spread.csprojResolveAssemblyReference.cache
+G:\DiscuzNT\Discuz.Web\plugin\Spread\obj\Release\Discuz.Plugin.Spread.pdb
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Plugin.Spread.dll
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Plugin.Spread.pdb
+G:\DiscuzNT\Discuz.Web\plugin\Spread\obj\Release\Discuz.Plugin.Spread.dll
