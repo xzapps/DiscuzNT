@@ -1,0 +1,9 @@
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Web.Services.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Web.Services.pdb
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web.Services\obj\Release\Discuz.Web.Services.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web.Services\obj\Release\Discuz.Web.Services.pdb
+G:\DiscuzNT\Discuz.Web.Services\obj\Release\Discuz.Web.Services.csprojResolveAssemblyReference.cache
+G:\DiscuzNT\Discuz.Web.Services\obj\Release\Discuz.Web.Services.pdb
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Web.Services.dll
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Web.Services.pdb
+G:\DiscuzNT\Discuz.Web.Services\obj\Release\Discuz.Web.Services.dll

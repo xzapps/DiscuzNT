@@ -1,0 +1,314 @@
+<%template _header%>
+
+
+
+
+
+
+<div class="wrap cl pageinfo">
+	<div id="nav">
+		<%if {usergroupinfo.allowsearch}>0%>
+			<%template _quicksearch%>
+		<%/if%>
+		<%if {config.isframeshow}!=0%>
+		<script type="text/javascript">
+		if(top == self) {
+			document.write('<a href="{forumurl}frame.aspx?f=1" target="_top" class="frameswitch">分栏模式<\/a>');
+		}
+		</script>
+		<%/if%>
+		<a id="forumlist" href="{forumpath}" <%if {config.forumjump}==1%>onmouseover="showMenu(this.id);" onmouseout="showMenu(this.id);"<%/if%> class="title">{config.forumtitle}</a> &raquo; 首页
+	</div>
+</div>
+
+<div id="navsecond" style="float:left; margin-left:20px; width:165px;">
+<!--分类 板块 开始-->
+<div>
+<%set (int){lastforumlayer} = -1%>
+<%set (int){lastcolcount} = 1%>
+<%set (int){lastforumid} = 0%>
+<%set (int){subforumcount} = 0%>
+<%set (int){subcount} = 0%>
+<%loop (IndexPageForumInfo) forum forumlist%>
+<%if {forum.layer}==0%>
+    <%set {subcount} = 0%>
+	<%if {lastforumlayer}>-1%>
+		<%if {lastcolcount}!=1%>
+			<%if {subforumcount}!=0%>
+			<%repeat("<td>&nbsp;</td>", {lastcolcount}-{subforumcount})%>
+		</tr>
+			<%/if%>
+		</table>
+		</div>
+	</div>
+		<%else%>
+		</table>
+		</div>
+	</div>	
+		<%/if%>
+	<div id="ad_intercat_{lastforumid}"></div>
+	<%/if%>
+	<%if {forum.colcount}!=1%>
+		<%set {subforumcount}=0%>
+	<%/if%>
+	<div>
+		<div>
+			<h2>
+				<%set {aspxrewriteurl} = this.ShowForumAspxRewrite({forum.fid},0,{forum.rewritename})%>
+				<a href="{aspxrewriteurl}">{forum.name}</a>
+			</h2>
+		</div>
+		<div id="category_{forum.fid}" summary="category_{forum.fid}" class="fi" style="{forum.collapse}">
+		<table cellspacing="0" cellpadding="0">
+		<%set {lastforumlayer}=0%>
+		<%set {lastcolcount}={forum.colcount}%>
+		<%set {lastforumid}={forum.fid}%>
+		<%else%>
+		<%set {subcount}={subcount}+1%>
+	    <%csharp%>
+	    if (maxsubcount > 0)
+        {
+            if (subcount > maxsubcount)
+                continue;
+        }
+        <%/csharp%>
+		<%if {forum.colcount}==1%>
+		<tbody id="forum{forum.fid}">
+			<tr>
+				<%set {aspxrewriteurl} = this.ShowTopicAspxRewrite({forum.lasttid},0)%>
+				<th <%if {config.Shownewposticon}==1 %>class="notopic<%if {forum.havenew}=="new" %> new<%/if%>"<%/if%>>
+					<span>
+					<%if {forum.redirect}==""%>
+						<%set {aspxrewriteurl} = this.ShowForumAspxRewrite({forum.fid},0,{forum.rewritename})%>
+						<a href="{aspxrewriteurl}">
+					<%else%>
+						<a href="{forum.redirect}" target="_blank">
+					<%/if%>
+                    <%if {forum.icon}!=""%>
+                        <%set (string){fname} = Utils.RemoveHtml({forum.name})%>
+					    <img src="{forum.icon}" border="0" hspace="5" alt="{fname}"/>
+				    <%/if%>
+					{forum.name}</a>
+					</span>
+				</th>
+			</tr>
+		</tbody>
+	<%else%>
+	<%set {subforumcount}={subforumcount}+1%>
+	<%set (double){colwidth} = 99.9 / {forum.colcount} %>
+		<%if {subforumcount}==1%>
+		<tbody>
+		<tr>
+		<%/if%>
+			<th style="width:{colwidth}%;" <%if {config.Shownewposticon}==1 %>class="notopic <%if {forum.havenew}=="new" %>new<%/if%>"<%/if%>>
+				<span>				
+				<%if {forum.redirect}==""%>
+				    <%set {aspxrewriteurl} = this.ShowForumAspxRewrite({forum.fid},0,{forum.rewritename})%>
+					<a href="{aspxrewriteurl}">
+				<%else%>
+					<a href="{forum.redirect}" target="_blank">
+				<%/if%>
+                {forum.name}</a>
+				</span>
+			</th>
+<%if {subforumcount}=={forum.colcount}%>
+		</tr>
+		</tbody>
+	<%set {subforumcount}=0%>
+<%/if%>
+<%/if%>
+	<%set {lastforumlayer}=1%>
+	<%set {lastcolcount}={forum.colcount}%>
+<%/if%>
+<%/loop%>
+<%if {lastcolcount}!=1 && {subforumcount}!=0%>
+		<%repeat("<td>&nbsp;</td>", {lastcolcount}-{subforumcount})%>
+		</tr>
+<%/if%>
+	</table>
+	</div>
+</div>
+</div>
+<!--分类 板块 结束-->
+</div>
+
+
+<div id="maincontent" style="width:743px;margin-left:10px;">
+<script type="text/javascript">
+var postminchars = parseInt({config.minpostsize});
+var postmaxchars = parseInt({config.maxpostsize});
+var disablepostctrl = parseInt({disablepostctrl});
+</script>
+
+<div class="wrap cl forum">
+
+		<span>公告:</span>	
+			<%loop announcement announcementlist%>
+                <%set (string){announcementlastdatetime} = ForumUtils.ConvertDateTime({announcement[starttime]})%>
+				<a href="announcement.aspx#{announcement[id]}" class="xg2" title="{announcement[title]}">{announcement[title]}<em>{announcementlastdatetime}</em></a>
+			<%/loop%>
+
+	<script type="text/javascript" src="{jsdir}/template_announcement.js"></script>
+
+    <div class="topic_num cl">
+	今日:<em class="xg2">{todayposts}</em><span class="pipe">|</span>昨日:<em class="xg2">{yesterdayposts}</em><span class="pipe">|</span>最高:<em title="({highestpostsdate})" class="xg2">{highestposts}</em><span class="pipe">|</span>课程:<em class="xg2">{totaltopic}</em><span class="pipe">|</span>交流:<em class="xg2">{totalpost}</em><span class="pipe">|</span>同学:<em class="xg2">{totalusers}</em><span class="pipe">|</span>欢迎新同学:<a href="{UserInfoAspxRewrite(lastuserid)}" class="xg2">{lastusername}</a>
+</div>
+
+<%template _forumhot%>
+
+<br />
+<%template _pagewordadlist%>
+
+<br />
+
+
+
+<!--友情链接 开始-->
+<%if {forumlinkcount}>0%>
+	<div id="forumlinks">
+    友情链接：	
+	<%set (bool){forumlinkend} = false%>
+	<%loop forumlink forumlinklist%>
+	<%if {forumlink[_id]}==1%>
+		<ul class="forumlinks">	
+		<%/if%>
+		<%if {forumlink[logo]}!=""%>
+		<li style=" width: 5em;">
+			<a href="{forumlink[url]}" target="_blank"><img src="{forumlink[logo]}" alt="{forumlink[name]}"  class="forumlink_logo"/></a>
+			<h5><a href="{forumlink[url]}" target="_blank">{forumlink[name]}</a></h5>
+			<p>{forumlink[note]}</p>
+		</li>
+		<%else if {forumlink[name]}!="$$otherlink$$"%>
+		<li style=" width: 5em;">
+			<h5>
+				<a href="{forumlink[url]}" target="_blank">{forumlink[name]}</a>
+			</h5>
+			<p>{forumlink[note]}</p>
+		</li>
+	<%else%>
+	<%if {forumlinkend}==false%>
+		</ul>
+		<%set {forumlinkend} = true%>
+	<%/if%>
+	<div class="{forumlink[url]}">
+	    <ul>
+		{forumlink[note]}
+		</ul>
+	</div>
+	<%/if%>
+	<%/loop%>
+	<%if {forumlinkend}==false%>
+		</ul>
+	<%/if%>
+	</div>
+<%/if%>
+<!--友情链接 结束-->
+
+
+
+<!--在线情况 开始-->
+<%if {config.whosonlinestatus}!=0 && {config.whosonlinestatus}!=2%>
+<div id="online">
+	<div>
+		<h3>
+			<a href="{forumurl}onlineuser.aspx">在线用户</a> - <em>{totalonline}</em> 人在线 <%if {showforumonline}%>- {totalonlineuser} 会员<span id="invisible"></span>, {totalonlineguest} 游客<%/if%>- 最高记录是 <em>{highestonlineusercount}</em> 于 <em>{highestonlineusertime}</em>
+			<em style="padding-left:10px;">共<cite>{totalusers}</cite>位会员- 新会员:<a href="{UserInfoAspxRewrite(lastuserid)}" class="xg2">{lastusername}</a></em>
+			<%if {showforumonline}==false%>
+			<em style="padding-left:10px;"><a href="?showonline=yes#online" class="xg2">点击查看在线列表</a></em>
+			<%/if%>
+		</h3>
+	</div>
+</div>
+<%/if%>
+<!--在线情况 结束-->
+
+
+
+
+</div>
+<%if {config.stylejump}==1%>
+<%if {userid}!=-1 || {config.guestcachepagetimeout}<=0%>
+	<div id="styleswitcherhome_menu" class="popupmenu_popup cl skin" style="display: none;">
+		<ul>
+		{templatelistboxoptionsforforumindex}
+		</ul>
+	</div>
+<%/if%>
+<%/if%>
+<%if {config.forumjump}==1%>
+	{navhomemenu}
+<%/if%>
+</div>
+
+
+
+
+    <div id="sidebar" style="width:165px; float:left;">
+    <div style=" width:160px; height:300px; border:1px solid #ccc;">
+        <h3>好学同学</h3>
+        <%loop (ForumHotItemInfo) forumhotiteminfo3 forumhotconfiginfo.ForumHotCollection%>		
+   		                <%if {forumhotiteminfo3.id}==4 && {forumhotiteminfo3.enabled}==1%>
+			                <%if {forumhotiteminfo3.datatype}=="users" %>
+			                    <div class="newHotB" name="hot_layer_{forumhotiteminfo3.id}" id="hot_layer_{forumhotiteminfo3.id}">	
+				                    <%loop (ShortUserInfo) user ForumHots.GetUserList(forumhotiteminfo3.Dataitemcount,forumhotiteminfo3.Sorttype,forumhotiteminfo3.Cachetimeout,forumhotiteminfo3.Id)%>
+					                    <%set {aspxrewriteurl} = this.UserInfoAspxRewrite({user.uid})%>
+					                    <%if {user[_id]}%10==1 || {user[_id]}==1%>
+						                     <%if {user[_id]}==1%>
+							                    <ul class=" cl one">
+						                    <%else%>
+							                    <ul class=" cl two">
+						                    <%/if%>
+					                    <%/if%>
+					                    <li><a href="{forumurl}{aspxrewriteurl}" target="_blank">{user.username}</a>
+					                    </li>
+					                    <%if {user[_id]}%10==0%>
+					                    </ul>
+					                    <%/if%>
+				                    <%/loop%>
+			                    </div>
+			                <%/if%>
+		                <%/if%>
+		            <%/loop%>
+</div>
+        <br />
+
+        <div style=" width:160px; height:300px; border:1px solid #ccc;">
+
+         <h3>课程排行</h3>
+        <%loop (ForumHotItemInfo) forumhotiteminfo4 forumhotconfiginfo.ForumHotCollection%>		
+   		                <%if {forumhotiteminfo4.id}==5 && {forumhotiteminfo4.enabled}==1%>			    
+			                <%if {forumhotiteminfo4.datatype}=="forums"%>
+			                    <div class="newHotB" name="hot_layer_{forumhotiteminfo4.id}" id="hot_layer_{forumhotiteminfo4.id}">	
+				                    <%loop (ForumInfo) foruminfo ForumHots.GetHotForumList(forumhotiteminfo4.Dataitemcount,forumhotiteminfo4.Sorttype,forumhotiteminfo4.Cachetimeout,forumhotiteminfo4.Id)%>
+					                    <%set {aspxrewriteurl} = this.ShowForumAspxRewrite({strtoint({foruminfo.fid})},0)%>
+					                    <%if {foruminfo[_id]}%10==1 || {foruminfo[_id]}==1%>
+                                            <%if {foruminfo[_id]}==1%>
+							                    <ul class=" cl one">
+						                    <%else%>
+							                    <ul class=" cl two">
+						                    <%/if%>
+					                    <%/if%>
+					                        <li><em>
+					                        [
+					                        <%if {forumhotiteminfo4.sorttype}=="posts"||{forumhotiteminfo4.sorttype}=="today"||{forumhotiteminfo4.sorttype}=="thismonth"%>{foruminfo.posts}<%/if%>
+					                        <%if {forumhotiteminfo4.sorttype}=="topics"%>{foruminfo.topics}<%/if%>
+                                            ]
+					                        </em><a href="{forumurl}{aspxrewriteurl}" target="_blank">{foruminfo.name}</a>
+					                        </li>
+					                    <%if {foruminfo[_id]}%10==0%>
+					                    </ul>
+					                    <%/if%>		
+				                    <%/loop%>
+			                    </div>
+			                <%/if%>
+		                <%/if%>
+		            <%/loop%>
+
+                    </div>
+    </div>
+
+<%template _copyright%>
+<%template _adlist%>
+{mediaad}
+{inforumad}
+<%template _footer%>

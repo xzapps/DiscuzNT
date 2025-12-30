@@ -1,0 +1,51 @@
+<div id="subforum" class="main cl list">
+	<div id="category_{forum.fid}"  class="fi" summary="category_{forum.fid}">
+	<table cellspacing="0" cellpadding="0">
+	<tbody>	
+	<%if {forum.colcount}==1%>
+		<%loop (IndexPageForumInfo) subforum subforumlist%>
+			<tr>
+				<%set {aspxrewriteurl} = this.ShowForumAspxRewrite({subforum.fid},0)%>
+				<th <%if {config.Shownewposticon}==1 %>class="notopic <%if {subforum.havenew}=="new" %>new<%/if%>"<%/if%>>
+					<h2>						
+						<%if {subforum.redirect}==""%>
+							<%set {aspxrewriteurl} = this.ShowForumAspxRewrite({subforum.fid},0,{subforum.rewritename})%>
+							<a href="{forumurl}{aspxrewriteurl}">
+						<%else%>
+							<a href="{subforum.redirect}" target="_blank">
+						<%/if%>
+						{subforum.name}</a>
+					</h2>
+				</th>
+			  </tr>
+		<%/loop%>
+<%else%>
+		<%set (int) {subforumindex}=0%>
+		<%set (double){colwidth} = 99.6 / {forum.colcount} %>
+		<%loop (IndexPageForumInfo) subforum subforumlist%>		
+		<%set {subforumindex}={subforumindex}+1%>
+		<%if {subforumindex}==1%>
+			<tr>
+		<%/if%>
+				<th style="width:{colwidth}%;" <%if {config.Shownewposticon}==1 %>class="notopic <%if {subforum.havenew}=="new" %>new<%/if%>"<%/if%>>
+				<h2>				
+				<%if {forum.redirect}==""%>
+					<%set {aspxrewriteurl} = this.ShowForumAspxRewrite({subforum.fid},0,{subforum.rewritename})%>
+					<a href="{forumurl}{aspxrewriteurl}">
+				<%else%>
+					<a href="{subforum.redirect}" target="_blank">
+				<%/if%>
+				{subforum.name}</a>
+				</h2>
+				
+				 </th>
+		<%if {subforumindex}=={forum.colcount}%>
+			</tr>
+			<%set {subforumindex}=0%>
+		<%/if%>
+		<%/loop%>
+<%/if%>
+	</tbody>
+	</table>
+	</div>
+</div>

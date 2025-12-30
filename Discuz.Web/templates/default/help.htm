@@ -1,0 +1,18 @@
+﻿<%template _header%>
+<div class="wrap cl pageinfo">
+	<div id="nav">
+	<%if {usergroupinfo.allowsearch}>0%>
+		<%template _quicksearch%>
+	<%/if%>
+	<a href="{config.forumurl}" class="title">{config.forumtitle}</a> &raquo; <strong>帮助</strong>
+	</div>
+</div>
+<%if page_err==0%>
+<div class="wrap uc cl help">
+    感谢使用
+</div>
+<%else%>
+	<%template _errmsgbox%>
+<%/if%>
+<%template _copyright%>
+<%template _footer%>

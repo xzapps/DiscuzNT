@@ -1,0 +1,145 @@
+﻿<%template _header%>
+<%if {infloat}!=1%>
+<div class="wrap cl pageinfo">
+    <div id="nav">
+        <%if {usergroupinfo.allowsearch}>0%>
+        <%template _quicksearch%>
+        <%/if%>
+        <a id="forumlist" href="{forumpath}" <%if {config.forumjump}==1%>onmouseover="showMenu(this.id);"
+            onmouseout="showMenu(this.id);" <%/if%> class="title">{config.forumtitle}</a>
+        &raquo; {forumnav}
+        <%if {ismoder}%><a href="{forumpath}posttopic.aspx?forumid={forum.fid}&forumpage={pageid}"
+            style="float: right;">发新主题&nbsp;&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;<%/if%>
+    </div>
+</div>
+<script type="text/javascript" src="{jsdir}/ajax.js"></script>
+<%if {page_err}==0%>
+<script type="text/javascript">
+	var templatepath = "{templatepath}";
+    var imagedir = "{imagedir}";
+	var fid = parseInt({forum.fid});
+	var postminchars = parseInt({config.minpostsize});
+	var postmaxchars = parseInt({config.maxpostsize});
+	var disablepostctrl = parseInt({disablepostctrl});
+	var forumurl = forumpath = "{forumpath}";
+</script>
+<%/if%>
+<script type="text/javascript" src="{jsdir}/template_showforum.js"></script>
+
+<div id="navsecond" style="float: left; margin-left: 1px; width: 165px; padding-left:30px;">
+ <%if {page_err}==0%>
+    <div class="wrap cl">
+        <%template _pagewordadlist%>
+        <%if {showforumlogin}!=1%>
+        <div id="forumheader" >
+            <h2 style=" width:160px;"><%set {aspxrewriteurl} = this.ShowForumAspxRewrite({forum.fid},0)%>{forum.name}</h2>
+        </div>
+
+        
+
+        
+        <%if {forum.layer}!=0%>
+        <div class="main thread">
+            <form id="moderate" name="moderate" method="post" action="{forumpath}topicadmin.aspx?action=moderate&forumid={forumid}&infloat=1">
+            <div>
+                <table summary="{forum.fid}" id="threadlist" cellspacing="0" cellpadding="0" style=" width:160px;">
+                    <%loop announcement announcementlist%>
+                    <%csharp%>break;<%/csharp%>
+                    <%/loop%>
+                    <%set (string){tdivimg} = ""%>
+                    <%if {toptopiclist.Count}>0 && {topiclist.Count}>0%>
+                    <%/if%>
+                    <%loop (TopicInfo) topic topiclist%>
+                    <tbody>
+                        <tr>
+                            <th style="border-bottom: 0px;">
+                                <%if {pageid}<3 && {forum.Allowthumbnail}==1%>
+                                <%else%>
+                                <%set {aspxrewriteurl} = Urls.ShowTopicAspxRewrite({topic.tid},0, DNTRequest.GetInt("typeid", -1))%>
+                                <%if {topic.special}==4%>
+                                <%set {aspxrewriteurl} = Urls.ShowDebateAspxRewrite({topic.tid}, DNTRequest.GetInt("typeid", -1))%>
+                                <%/if%>
+                                <%set (int){ishtmltitle} = Topics.GetMagicValue(topic.Magic, MagicType.HtmlTitle)%>
+                                <%if {ishtmltitle}==1%>
+                                <a href="{forumpath}{aspxrewriteurl}<%if {config.Aspxrewrite}!=1%>&forumpage={pageid}<%/if%>">
+                                    {Topics.GetHtmlTitle(topic.Tid)}</a>
+                                <%else%>
+                                <a onclick="atarget(this)" href="{forumpath}{aspxrewriteurl}<%if {config.Aspxrewrite}!=1%>&forumpage={pageid}<%/if%>">
+                                    {topic.title}</a>
+                                <%/if%>
+                                <%/if%>
+                            </th>
+                        </tr>
+                    </tbody>
+                    <%/loop%>
+                </table>
+                
+            </form>
+        </div>
+
+        
+
+    </div>
+    {tdivimg}
+    <%if {config.whosonlinestatus}!=0 && {config.whosonlinestatus}!=1%>
+    <%/if%>
+
+    
+</div>
+
+<%/if%>
+<script type="text/javascript">
+    var maxpage = parseInt('{pagecount}');
+    var pageid = parseInt('{pageid}');
+    if (maxpage > 1) {
+        document.onkeyup = function (e) {
+            e = e ? e : window.event;
+            var tagname = is_ie ? e.srcElement.tagName : e.target.tagName;
+            if (tagname == 'INPUT' || tagname == 'TEXTAREA') return;
+            actualCode = e.keyCode ? e.keyCode : e.charCode;
+            if (pageid < maxpage && actualCode == 39) {
+                window.location = '{forumpath}{Urls.ShowForumAspxRewrite(forumid,pageid+1,forum.Rewritename)}';
+            }
+            if (pageid > 1 && actualCode == 37) {
+                window.location = '{forumpath}{Urls.ShowForumAspxRewrite(forumid,pageid-1,forum.Rewritename)}';
+            }
+        }
+    }
+</script>
+<%/if%>
+<%else%>
+<%if {needlogin}%>
+<%template _login%>
+<%else%>
+<%template _errmsgbox%>
+<%/if%>
+<%/if%>
+
+<%if {forum.Subforumcount}>0&&{subforumlist.Count}>0%>
+        <%template _subforum%>
+    <%/if%>
+
+</div>
+<%if {forum.layer}==0%>
+</div>
+<%/if%>
+
+<div id="maincontent" style="width: 720px; padding:5px;">
+            <%if {forum.description}!=""%>
+                <p>{forum.description}</p>
+            <%/if%>
+
+            <%if {forum.rules}!=""%>
+	            <div id="rules">{forum.rules}</div>
+            <%/if%>
+</div>
+
+<div id="sidebar" style="width: 165px; float: left; margin-left:20px;">
+    <div style="border:1px solid #ccc;width:150px; height:600px;float:left;">广告</div>
+</div>
+
+<%template _adlist%>
+{mediaad}
+<%/if%>
+<%template _copyright%>
+<%template _footer%>

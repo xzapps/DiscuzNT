@@ -1,0 +1,10 @@
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Space.Modules.Album.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Space.Modules.Album.pdb
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\space\modules\builtin\album\obj\Release\Discuz.Space.Modules.Album.csprojResolveAssemblyReference.cache
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\space\modules\builtin\album\obj\Release\Discuz.Space.Modules.Album.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\space\modules\builtin\album\obj\Release\Discuz.Space.Modules.Album.pdb
+G:\DiscuzNT\Discuz.Web\space\modules\builtin\album\obj\Release\Discuz.Space.Modules.Album.csprojResolveAssemblyReference.cache
+G:\DiscuzNT\Discuz.Web\space\modules\builtin\album\obj\Release\Discuz.Space.Modules.Album.pdb
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Space.Modules.Album.dll
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Space.Modules.Album.pdb
+G:\DiscuzNT\Discuz.Web\space\modules\builtin\album\obj\Release\Discuz.Space.Modules.Album.dll

@@ -1,0 +1,80 @@
+<%template _pageheader%>
+<body onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+
+<div id="wrapper" style="">
+	
+        <!--顶部个人信息栏 开始-->
+        <div style="float:right;width:1100px; text-align:right;margin-right:35px;">
+
+                <%if {userid}==-1%>
+                    <%if {pagename}!="login.aspx"&&{pagename}!="register.aspx"%>
+                        <a href="{forumpath}register.aspx"  style="margin-left: 7px;" class="xg2">注册</a>	
+                        <a href="{forumpath}login.aspx" style="margin-left: 7px;" class="xg2">登录</a>	
+                    <%/if%>
+			    <%else%>
+				    <p>
+					    <strong>{username}</strong><span class="xg1">在线</span><span class="pipe">|</span>
+                        <%set (string){linktitle} = ""%>
+                        <%set (string){showoverflow} = ""%>
+
+                        <%if {oluserinfo.newpms}>0%>
+                            <%if {oluserinfo.newpms}>=1000%>
+                                <%set {showoverflow} = "大于"%>
+                            <%/if%>
+                            <%set {linktitle} = "您有"+{showoverflow}+{oluserinfo.newpms}+"条新短消息"%>
+                        <%else%>
+                            <%set {linktitle} = "您没有新短消息"%>
+                        <%/if%>
+
+					    <a id="pm_ntc" href="{forumpath}usercpinbox.aspx" title="{linktitle}">短消息
+                        <%if {oluserinfo.newpms}>0 && {oluserinfo.newpms}<=1000%>
+                                    ({oluserinfo.newpms}<%if {oluserinfo.newpms}>=1000%>1000+<%/if%>)
+                        <%/if%>
+                        </a>
+
+					    <a href="{forumpath}usercpnotice.aspx?filter=all" title="{linktitle}">
+                            通知<%if {oluserinfo.newnotices}>0%>
+                                    ({oluserinfo.newnotices}<%if {oluserinfo.newnotices}>=1000%>+<%/if%>)
+                                <%/if%>
+                        </a>
+
+					    <a href="{forumpath}logout.aspx?userkey={userkey}">退出</a>
+				    </p>
+                <%/if%>
+        </div>	
+        <!--顶部个人信息栏 结束-->
+
+		<div id="logo">
+            
+            <!--logo 开始-->
+		    <div  style="float:left;">
+				<h2><a href="{forumpath}index.aspx" title="{config.forumtitle}"><img src="{imagedir}/logo.png" alt="{config.forumtitle}"/></a></h2>
+            </div>	
+            <!--logo 结束-->	
+
+            <!--顶部广告 开始-->
+            <div  style="float:right;">
+                <%if {headerad}!=""%>
+	                <div id="ad_headerbanner">{headerad}</div>
+                <%/if%>
+            </div>
+			<!--顶部广告 结束-->
+		</div>
+
+         <div id="navfirst" style=" float:left;">
+            <ul id="simple-menu" class="cl">
+			    {mainnavigation}
+		    </ul>
+	    </div>	
+
+<%else%>
+<%csharp%>
+Response.Clear();
+Response.ContentType = "Text/XML";
+Response.Expires = 0;
+Response.Cache.SetNoStore();
+<%/csharp%>
+<?xml version="1.0" encoding="utf-8"?><root><![CDATA[
+<%/if%>

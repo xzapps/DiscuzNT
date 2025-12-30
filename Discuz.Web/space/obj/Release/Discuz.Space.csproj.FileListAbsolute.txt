@@ -1,0 +1,10 @@
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Space.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\bin\Discuz.Space.pdb
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\space\obj\Release\Discuz.Space.csprojResolveAssemblyReference.cache
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\space\obj\Release\Discuz.Space.dll
+C:\Users\oubao\Desktop\Dot.Net源码\dnt_3.6.711_sqlserver_src\dnt_3.6.711_sqlserver_src\source_files\Discuz.Web\space\obj\Release\Discuz.Space.pdb
+G:\DiscuzNT\Discuz.Web\space\obj\Release\Discuz.Space.csprojResolveAssemblyReference.cache
+G:\DiscuzNT\Discuz.Web\space\obj\Release\Discuz.Space.pdb
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Space.dll
+G:\DiscuzNT\Discuz.Web\bin\Discuz.Space.pdb
+G:\DiscuzNT\Discuz.Web\space\obj\Release\Discuz.Space.dll
