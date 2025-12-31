@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -15,9 +15,9 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,7 +27,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -39,16 +38,8 @@
     <FileAlignment>4096</FileAlignment>
     <DebugSymbols>true</DebugSymbols>
     <BaseAddress>4194304</BaseAddress>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiproSoftware.CodeHighlighter.Net20, Version=4.0.59.0, Culture=neutral, PublicKeyToken=247639e84cc1f4e4, processorArchitecture=MSIL" />
-    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.102.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Antlr3.Runtime, Version=3.3.4.8517, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Administrator\Downloads\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="CodeHighlighterTest, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\RefDLL\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -78,7 +69,6 @@
     <Content Include="aspx\1\getip.aspx" />
     <Content Include="aspx\1\getpassword.aspx" />
     <Content Include="aspx\1\forumindex.aspx" />
-    <Content Include="aspx\1\InsertCode.aspx" />
     <Content Include="aspx\1\login.aspx" />
     <Content Include="aspx\1\logout.aspx" />
     <Content Include="aspx\1\onlineuser.aspx" />
@@ -92,7 +82,6 @@
     <Content Include="aspx\1\showtopic.aspx" />
     <Content Include="aspx\1\showtopiclist.aspx" />
     <Content Include="aspx\1\showuser.aspx" />
-    <Content Include="aspx\1\SynCodeGet.aspx" />
     <Content Include="aspx\1\topicadmin.aspx" />
     <Content Include="aspx\1\usercp.aspx" />
     <Content Include="aspx\1\usercpcreaditstransferlog.aspx" />
@@ -109,587 +98,11 @@
     <Content Include="aspx\1\usercpsentbox.aspx" />
     <Content Include="aspx\1\usercpshowpm.aspx" />
     <Content Include="aspx\1\userinfo.aspx" />
-    <Content Include="content\codehighlighter\Images\ContentBG.gif" />
-    <Content Include="content\codehighlighter\Images\IntelliPromptMemberList.gif" />
-    <Content Include="content\codehighlighter\Images\Logo.gif" />
-    <Content Include="content\codehighlighter\Images\MultiLanguage.gif" />
-    <Content Include="content\codehighlighter\Images\OutliningIndicators\ContractedBlock.gif" />
-    <Content Include="content\codehighlighter\Images\OutliningIndicators\ContractedSubBlock.gif" />
-    <Content Include="content\codehighlighter\Images\OutliningIndicators\ExpandedBlockEnd.gif" />
-    <Content Include="content\codehighlighter\Images\OutliningIndicators\ExpandedBlockStart.gif" />
-    <Content Include="content\codehighlighter\Images\OutliningIndicators\ExpandedSubBlockEnd.gif" />
-    <Content Include="content\codehighlighter\Images\OutliningIndicators\ExpandedSubBlockStart.gif" />
-    <Content Include="content\codehighlighter\Images\OutliningIndicators\InBlock.gif" />
-    <Content Include="content\codehighlighter\Images\OutliningIndicators\None.gif" />
-    <Content Include="content\codehighlighter\Languages\CSharpDynamicSyntaxLanguage.vb" />
-    <Content Include="content\codehighlighter\Languages\CssDynamicSyntaxLanguage.vb" />
-    <Content Include="content\codehighlighter\Languages\HtmlDynamicSyntaxLanguage.vb" />
-    <Content Include="content\codehighlighter\Languages\JavaDynamicSyntaxLanguage.vb" />
-    <Content Include="content\codehighlighter\Languages\JScriptDynamicSyntaxLanguage.vb" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.Assembly.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.BatchFile.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.CSharp.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.CSS.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.GrammarProduction.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.HTML.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.INIFile.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.Java.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.JScript.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.Lua.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.MSIL.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.Pascal.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.Perl.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.PHP.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.PowerShell.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.Python.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.SQL.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.VBDotNet.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.VBScript.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.XAML.xml" />
-    <Content Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.XML.xml" />
-    <Content Include="content\codehighlighter\Languages\SqlDynamicSyntaxLanguage.vb" />
-    <Content Include="content\codehighlighter\Languages\VBDotNetDynamicSyntaxLanguage.vb" />
-    <Content Include="images\ContentBG.gif" />
-    <Content Include="images\IntelliPromptMemberList.gif" />
-    <Content Include="images\MultiLanguage.gif" />
-    <Content Include="images\OutliningIndicators\ContractedBlock.gif" />
-    <Content Include="images\OutliningIndicators\ContractedSubBlock.gif" />
-    <Content Include="images\OutliningIndicators\ExpandedBlockEnd.gif" />
-    <Content Include="images\OutliningIndicators\ExpandedBlockStart.gif" />
-    <Content Include="images\OutliningIndicators\ExpandedSubBlockEnd.gif" />
-    <Content Include="images\OutliningIndicators\ExpandedSubBlockStart.gif" />
-    <Content Include="images\OutliningIndicators\InBlock.gif" />
-    <Content Include="images\OutliningIndicators\None.gif" />
     <Content Include="index.aspx" />
     <Content Include="javascript\template_share.js" />
-    <Content Include="templates\default - 副本\about.png" />
-    <Content Include="templates\default - 副本\about.xml" />
-    <Content Include="templates\default - 副本\activationuser.htm" />
-    <Content Include="templates\default - 副本\album\album.css" />
-    <Content Include="templates\default - 副本\album\albumindex.htm" />
-    <Content Include="templates\default - 副本\album\images\albumLine.gif" />
-    <Content Include="templates\default - 副本\album\images\albumLine2.gif" />
-    <Content Include="templates\default - 副本\album\images\album_edit.gif" />
-    <Content Include="templates\default - 副本\album\images\album_fav.gif" />
-    <Content Include="templates\default - 副本\album\images\album_info.gif" />
-    <Content Include="templates\default - 副本\album\images\al_bg.gif" />
-    <Content Include="templates\default - 副本\album\images\attphoto.gif" />
-    <Content Include="templates\default - 副本\album\images\buttonreport.gif" />
-    <Content Include="templates\default - 副本\album\images\button_seeit.gif" />
-    <Content Include="templates\default - 副本\album\images\dotphoto.gif" />
-    <Content Include="templates\default - 副本\album\images\dotspace.gif" />
-    <Content Include="templates\default - 副本\album\images\error.gif" />
-    <Content Include="templates\default - 副本\album\images\errorphoto.gif" />
-    <Content Include="templates\default - 副本\album\images\focusbg.gif" />
-    <Content Include="templates\default - 副本\album\images\icon_album.gif" />
-    <Content Include="templates\default - 副本\album\images\icon_hot.gif" />
-    <Content Include="templates\default - 副本\album\images\lastother.gif" />
-    <Content Include="templates\default - 副本\album\images\lastupdate.gif" />
-    <Content Include="templates\default - 副本\album\images\nophoto.jpg" />
-    <Content Include="templates\default - 副本\album\images\picturebg.gif" />
-    <Content Include="templates\default - 副本\album\images\rank_bg.jpg" />
-    <Content Include="templates\default - 副本\album\images\reportfinish.gif" />
-    <Content Include="templates\default - 副本\album\images\right.gif" />
-    <Content Include="templates\default - 副本\album\images\ScrollarrowLeft.jpg" />
-    <Content Include="templates\default - 副本\album\images\ScrollarrowRight.jpg" />
-    <Content Include="templates\default - 副本\album\images\scrollphoto.jpg" />
-    <Content Include="templates\default - 副本\album\images\side_bg.gif" />
-    <Content Include="templates\default - 副本\album\images\title_bg.jpg" />
-    <Content Include="templates\default - 副本\album\images\title_bg2.gif" />
-    <Content Include="templates\default - 副本\album\images\user_album.gif" />
-    <Content Include="templates\default - 副本\album\images\user_info.gif" />
-    <Content Include="templates\default - 副本\album\showalbum.htm" />
-    <Content Include="templates\default - 副本\album\showalbumlist.htm" />
-    <Content Include="templates\default - 副本\album\showphoto.htm" />
-    <Content Include="templates\default - 副本\album\showphotolist.htm" />
-    <Content Include="templates\default - 副本\album\usercpeditphoto.htm" />
-    <Content Include="templates\default - 副本\album\usercpspacemanagealbum.htm" />
-    <Content Include="templates\default - 副本\album\usercpspacemanagephoto.htm" />
-    <Content Include="templates\default - 副本\album\usercpspacephotoadd.htm" />
-    <Content Include="templates\default - 副本\album\_albumheader.htm" />
-    <Content Include="templates\default - 副本\album\_albumnavigation.htm" />
-    <Content Include="templates\default - 副本\album\_photoerrmsgbox.htm" />
-    <Content Include="templates\default - 副本\album\_photomsgbox.htm" />
-    <Content Include="templates\default - 副本\announcement.htm" />
-    <Content Include="templates\default - 副本\attachment.htm" />
-    <Content Include="templates\default - 副本\buytopic.htm" />
-    <Content Include="templates\default - 副本\css.css" />
-    <Content Include="templates\default - 副本\delpost.htm" />
-    <Content Include="templates\default - 副本\dnt.css" />
-    <Content Include="templates\default - 副本\editor.css" />
-    <Content Include="templates\default - 副本\editpost.htm" />
-    <Content Include="templates\default - 副本\favorites.htm" />
-    <Content Include="templates\default - 副本\float.css" />
-    <Content Include="templates\default - 副本\forumhot.css" />
-    <Content Include="templates\default - 副本\forumindex.htm" />
-    <Content Include="templates\default - 副本\forumlist.htm" />
-    <Content Include="templates\default - 副本\forumsearch.htm" />
-    <Content Include="templates\default - 副本\frame.htm" />
-    <Content Include="templates\default - 副本\getip.htm" />
-    <Content Include="templates\default - 副本\getpassword.htm" />
-    <Content Include="templates\default - 副本\help.htm" />
-    <Content Include="templates\default - 副本\images\access_allow.gif" />
-    <Content Include="templates\default - 副本\images\access_normal.gif" />
-    <Content Include="templates\default - 副本\images\add_invite.gif" />
-    <Content Include="templates\default - 副本\images\ad_icon.gif" />
-    <Content Include="templates\default - 副本\images\agree.gif" />
-    <Content Include="templates\default - 副本\images\arrow_left.gif" />
-    <Content Include="templates\default - 副本\images\arrow_right.gif" />
-    <Content Include="templates\default - 副本\images\atarget.png" />
-    <Content Include="templates\default - 副本\images\attachment.gif" />
-    <Content Include="templates\default - 副本\images\attachment_image.gif" />
-    <Content Include="templates\default - 副本\images\avatar_shadow.gif" />
-    <Content Include="templates\default - 副本\images\bigbtn.gif" />
-    <Content Include="templates\default - 副本\images\blog.gif" />
-    <Content Include="templates\default - 副本\images\bodybg.png" />
-    <Content Include="templates\default - 副本\images\bonus.gif" />
-    <Content Include="templates\default - 副本\images\bonusflag.gif" />
-    <Content Include="templates\default - 副本\images\btn_post.gif" />
-    <Content Include="templates\default - 副本\images\btn_silverlight.gif" />
-    <Content Include="templates\default - 副本\images\check_error.gif" />
-    <Content Include="templates\default - 副本\images\check_right.gif" />
-    <Content Include="templates\default - 副本\images\cls.gif" />
-    <Content Include="templates\default - 副本\images\collapse.gif" />
-    <Content Include="templates\default - 副本\images\collapsed_no.gif" />
-    <Content Include="templates\default - 副本\images\collapsed_yes.gif" />
-    <Content Include="templates\default - 副本\images\data_invalid.gif" />
-    <Content Include="templates\default - 副本\images\data_valid.gif" />
-    <Content Include="templates\default - 副本\images\debatesmall.gif" />
-    <Content Include="templates\default - 副本\images\delete.gif" />
-    <Content Include="templates\default - 副本\images\digest.gif" />
-    <Content Include="templates\default - 副本\images\digest1.gif" />
-    <Content Include="templates\default - 副本\images\digest2.gif" />
-    <Content Include="templates\default - 副本\images\digest3.gif" />
-    <Content Include="templates\default - 副本\images\disagree.gif" />
-    <Content Include="templates\default - 副本\images\discuznt_logo.gif" />
-    <Content Include="templates\default - 副本\images\error.gif" />
-    <Content Include="templates\default - 副本\images\expand.gif" />
-    <Content Include="templates\default - 副本\images\external.png" />
-    <Content Include="templates\default - 副本\images\external2.png" />
-    <Content Include="templates\default - 副本\images\favorite.gif" />
-    <Content Include="templates\default - 副本\images\folder_closed.gif" />
-    <Content Include="templates\default - 副本\images\folder_move.gif" />
-    <Content Include="templates\default - 副本\images\folder_mytopic.gif" />
-    <Content Include="templates\default - 副本\images\folder_new.gif" />
-    <Content Include="templates\default - 副本\images\folder_newhot.gif" />
-    <Content Include="templates\default - 副本\images\folder_old.gif" />
-    <Content Include="templates\default - 副本\images\folder_oldhot.gif" />
-    <Content Include="templates\default - 副本\images\folder_s.gif" />
-    <Content Include="templates\default - 副本\images\forum.gif" />
-    <Content Include="templates\default - 副本\images\forumdigest.gif" />
-    <Content Include="templates\default - 副本\images\forum_new.gif" />
-    <Content Include="templates\default - 副本\images\frame_back.gif" />
-    <Content Include="templates\default - 副本\images\frame_go.gif" />
-    <Content Include="templates\default - 副本\images\gather\album_bg.gif" />
-    <Content Include="templates\default - 副本\images\gather\bignews_btn_bg.gif" />
-    <Content Include="templates\default - 副本\images\gather\commend_bg.gif" />
-    <Content Include="templates\default - 副本\images\gather\discuznt_logo.gif" />
-    <Content Include="templates\default - 副本\images\gather\nav_bot.gif" />
-    <Content Include="templates\default - 副本\images\gather\nophoto.jpg" />
-    <Content Include="templates\default - 副本\images\gather\photobox_bg.png" />
-    <Content Include="templates\default - 副本\images\gather\slide_pic.jpg" />
-    <Content Include="templates\default - 副本\images\gather\titlebg.gif" />
-    <Content Include="templates\default - 副本\images\gather\title_bg.gif" />
-    <Content Include="templates\default - 副本\images\gather\title_bg2.gif" />
-    <Content Include="templates\default - 副本\images\gotop.gif" />
-    <Content Include="templates\default - 副本\images\hint.gif" />
-    <Content Include="templates\default - 副本\images\home.gif" />
-    <Content Include="templates\default - 副本\images\hotbg.png" />
-    <Content Include="templates\default - 副本\images\icon_announcement.gif" />
-    <Content Include="templates\default - 副本\images\icon_drop.gif" />
-    <Content Include="templates\default - 副本\images\icon_feed.gif" />
-    <Content Include="templates\default - 副本\images\icon_quote_e.gif" />
-    <Content Include="templates\default - 副本\images\icon_quote_s.gif" />
-    <Content Include="templates\default - 副本\images\icon_search.gif" />
-    <Content Include="templates\default - 副本\images\icon_subnav.gif" />
-    <Content Include="templates\default - 副本\images\info_small.gif" />
-    <Content Include="templates\default - 副本\images\ip.gif" />
-    <Content Include="templates\default - 副本\images\lastedit.gif" />
-    <Content Include="templates\default - 副本\images\legend_reward.gif" />
-    <Content Include="templates\default - 副本\images\loading.gif" />
-    <Content Include="templates\default - 副本\images\locked.gif" />
-    <Content Include="templates\default - 副本\images\logo.png" />
-    <Content Include="templates\default - 副本\images\l_collapsed_no.gif" />
-    <Content Include="templates\default - 副本\images\l_collapsed_yes.gif" />
-    <Content Include="templates\default - 副本\images\mdly.png" />
-    <Content Include="templates\default - 副本\images\mu.png" />
-    <Content Include="templates\default - 副本\images\mymenubg.gif" />
-    <Content Include="templates\default - 副本\images\mytopic.gif" />
-    <Content Include="templates\default - 副本\images\newarow.gif" />
-    <Content Include="templates\default - 副本\images\newtopic.png" />
-    <Content Include="templates\default - 副本\images\online.gif" />
-    <Content Include="templates\default - 副本\images\op.png" />
-    <Content Include="templates\default - 副本\images\pmto.gif" />
-    <Content Include="templates\default - 副本\images\pm_0.gif" />
-    <Content Include="templates\default - 副本\images\pm_1.gif" />
-    <Content Include="templates\default - 副本\images\pollsmall.gif" />
-    <Content Include="templates\default - 副本\images\pope_bg.png" />
-    <Content Include="templates\default - 副本\images\popupcredit_bg.gif" />
-    <Content Include="templates\default - 副本\images\popupcredit_btn.gif" />
-    <Content Include="templates\default - 副本\images\poster_action.png" />
-    <Content Include="templates\default - 副本\images\posts_new.gif" />
-    <Content Include="templates\default - 副本\images\qa.gif" />
-    <Content Include="templates\default - 副本\images\qz.gif" />
-    <Content Include="templates\default - 副本\images\ratbg.gif" />
-    <Content Include="templates\default - 副本\images\ratesrcorebg.gif" />
-    <Content Include="templates\default - 副本\images\reply.png" />
-    <Content Include="templates\default - 副本\images\rewardsmall.gif" />
-    <Content Include="templates\default - 副本\images\rewardsmallend.gif" />
-    <Content Include="templates\default - 副本\images\re_unsolved.gif" />
-    <Content Include="templates\default - 副本\images\right.gif" />
-    <Content Include="templates\default - 副本\images\rss2.gif" />
-    <Content Include="templates\default - 副本\images\rwd.gif" />
-    <Content Include="templates\default - 副本\images\share.png" />
-    <Content Include="templates\default - 副本\images\showdigest.gif" />
-    <Content Include="templates\default - 副本\images\sidebg.gif" />
-    <Content Include="templates\default - 副本\images\sigline.gif" />
-    <Content Include="templates\default - 副本\images\sortnum.png" />
-    <Content Include="templates\default - 副本\images\star_level1.gif" />
-    <Content Include="templates\default - 副本\images\star_level2.gif" />
-    <Content Include="templates\default - 副本\images\star_level3.gif" />
-    <Content Include="templates\default - 副本\images\style.gif" />
-    <Content Include="templates\default - 副本\images\systempm.gif" />
-    <Content Include="templates\default - 副本\images\tbn.png" />
-    <Content Include="templates\default - 副本\images\text_control.png" />
-    <Content Include="templates\default - 副本\images\titlebg.png" />
-    <Content Include="templates\default - 副本\images\tradesmall.gif" />
-    <Content Include="templates\default - 副本\images\t_top1.gif" />
-    <Content Include="templates\default - 副本\images\t_top2.gif" />
-    <Content Include="templates\default - 副本\images\t_top3.gif" />
-    <Content Include="templates\default - 副本\images\usericon.gif" />
-    <Content Include="templates\default - 副本\images\useronline.gif" />
-    <Content Include="templates\default - 副本\images\useroutline.gif" />
-    <Content Include="templates\default - 副本\images\user_cp.png" />
-    <Content Include="templates\default - 副本\images\user_info.png" />
-    <Content Include="templates\default - 副本\images\user_online.gif" />
-    <Content Include="templates\default - 副本\images\user_tool.png" />
-    <Content Include="templates\default - 副本\invite.htm" />
-    <Content Include="templates\default - 副本\login.htm" />
-    <Content Include="templates\default - 副本\logout.htm" />
-    <Content Include="templates\default - 副本\misc.htm" />
-    <Content Include="templates\default - 副本\modcp.htm" />
-    <Content Include="templates\default - 副本\myattachment.htm" />
-    <Content Include="templates\default - 副本\myposts.htm" />
-    <Content Include="templates\default - 副本\mytopics.htm" />
-    <Content Include="templates\default - 副本\onlineuser.htm" />
-    <Content Include="templates\default - 副本\poll.htm" />
-    <Content Include="templates\default - 副本\postreply.htm" />
-    <Content Include="templates\default - 副本\posttopic.htm" />
-    <Content Include="templates\default - 副本\referrer.htm" />
-    <Content Include="templates\default - 副本\register.htm" />
-    <Content Include="templates\default - 副本\search.css" />
-    <Content Include="templates\default - 副本\search.htm" />
-    <Content Include="templates\default - 副本\seditor.css" />
-    <Content Include="templates\default - 副本\setnewpassword.htm" />
-    <Content Include="templates\default - 副本\showbonus.htm" />
-    <Content Include="templates\default - 副本\showdebate.htm" />
-    <Content Include="templates\default - 副本\showforum.htm" />
-    <Content Include="templates\default - 副本\showratelist.htm" />
-    <Content Include="templates\default - 副本\showtemplate.htm" />
-    <Content Include="templates\default - 副本\showtopic.htm" />
-    <Content Include="templates\default - 副本\showtopiclist.htm" />
-    <Content Include="templates\default - 副本\showuser.htm" />
-    <Content Include="templates\default - 副本\space\bloglist.htm" />
-    <Content Include="templates\default - 副本\space\images\side_bg.gif" />
-    <Content Include="templates\default - 副本\space\space.css" />
-    <Content Include="templates\default - 副本\space\spaceindex.htm" />
-    <Content Include="templates\default - 副本\space\spaceregister.htm" />
-    <Content Include="templates\default - 副本\space\usercpspacecategoryadd.htm" />
-    <Content Include="templates\default - 副本\space\usercpspacecategoryedit.htm" />
-    <Content Include="templates\default - 副本\space\usercpspacecomment.htm" />
-    <Content Include="templates\default - 副本\space\usercpspaceeditblog.htm" />
-    <Content Include="templates\default - 副本\space\usercpspacelinkadd.htm" />
-    <Content Include="templates\default - 副本\space\usercpspacelinkedit.htm" />
-    <Content Include="templates\default - 副本\space\usercpspacelinklist.htm" />
-    <Content Include="templates\default - 副本\space\usercpspacemanageattachment.htm" />
-    <Content Include="templates\default - 副本\space\usercpspacemanageblog.htm" />
-    <Content Include="templates\default - 副本\space\usercpspacemanagecategory.htm" />
-    <Content Include="templates\default - 副本\space\usercpspacepostblog.htm" />
-    <Content Include="templates\default - 副本\space\usercpspaceset.htm" />
-    <Content Include="templates\default - 副本\space\_rotatepic.htm" />
-    <Content Include="templates\default - 副本\space\_spaceheader.htm" />
-    <Content Include="templates\default - 副本\space\_spacemenu.htm" />
-    <Content Include="templates\default - 副本\stats.htm" />
-    <Content Include="templates\default - 副本\tags.htm" />
-    <Content Include="templates\default - 副本\templatevariable.xml" />
-    <Content Include="templates\default - 副本\topicadmin.htm" />
-    <Content Include="templates\default - 副本\useradmin.htm" />
-    <Content Include="templates\default - 副本\usercp.htm" />
-    <Content Include="templates\default - 副本\usercpannouncepm.htm" />
-    <Content Include="templates\default - 副本\usercpcreaditstransferlog.htm" />
-    <Content Include="templates\default - 副本\usercpcreditsbuy.htm" />
-    <Content Include="templates\default - 副本\usercpcreditspay.htm" />
-    <Content Include="templates\default - 副本\usercpcreditspayinlog.htm" />
-    <Content Include="templates\default - 副本\usercpcreditspayoutlog.htm" />
-    <Content Include="templates\default - 副本\usercpcreditstransfer.htm" />
-    <Content Include="templates\default - 副本\usercpdraftbox.htm" />
-    <Content Include="templates\default - 副本\usercpignorelist.htm" />
-    <Content Include="templates\default - 副本\usercpinbox.htm" />
-    <Content Include="templates\default - 副本\usercpnewpassword.htm" />
-    <Content Include="templates\default - 副本\usercpnotice.htm" />
-    <Content Include="templates\default - 副本\usercppostpm.htm" />
-    <Content Include="templates\default - 副本\usercppreference.htm" />
-    <Content Include="templates\default - 副本\usercpprofile.htm" />
-    <Content Include="templates\default - 副本\usercpsentbox.htm" />
-    <Content Include="templates\default - 副本\usercpshowpm.htm" />
-    <Content Include="templates\default - 副本\usercpsubscribe.htm" />
-    <Content Include="templates\default - 副本\userdatahub.htm" />
-    <Content Include="templates\default - 副本\userinfo.htm" />
-    <Content Include="templates\default - 副本\website.css" />
-    <Content Include="templates\default - 副本\website.htm" />
-    <Content Include="templates\default - 副本\widthauto.css" />
-    <Content Include="templates\default - 副本\wysiwyg.css" />
-    <Content Include="templates\default - 副本\_adlist.htm" />
-    <Content Include="templates\default - 副本\_ajaxquickreply.htm" />
-    <Content Include="templates\default - 副本\_attachmentinfo.htm" />
-    <Content Include="templates\default - 副本\_attachmentmenu.htm" />
-    <Content Include="templates\default - 副本\_copyright.htm" />
-    <Content Include="templates\default - 副本\_editor.htm" />
-    <Content Include="templates\default - 副本\_editor_menu.htm" />
-    <Content Include="templates\default - 副本\_errmsgbox.htm" />
-    <Content Include="templates\default - 副本\_footer.htm" />
-    <Content Include="templates\default - 副本\_forumhot.htm" />
-    <Content Include="templates\default - 副本\_header.htm" />
-    <Content Include="templates\default - 副本\_login.htm" />
-    <Content Include="templates\default - 副本\_menu.htm" />
-    <Content Include="templates\default - 副本\_msgbox.htm" />
-    <Content Include="templates\default - 副本\_mymenu.htm" />
-    <Content Include="templates\default - 副本\_pageheader.htm" />
-    <Content Include="templates\default - 副本\_pagewordadlist.htm" />
-    <Content Include="templates\default - 副本\_permenu.htm" />
-    <Content Include="templates\default - 副本\_poll.htm" />
-    <Content Include="templates\default - 副本\_post.htm" />
-    <Content Include="templates\default - 副本\_postattachments.htm" />
-    <Content Include="templates\default - 副本\_post_attachlist.htm" />
-    <Content Include="templates\default - 副本\_quickpost.htm" />
-    <Content Include="templates\default - 副本\_quicksearch.htm" />
-    <Content Include="templates\default - 副本\_ratelog.htm" />
-    <Content Include="templates\default - 副本\_realnamesystem.htm" />
-    <Content Include="templates\default - 副本\_report.htm" />
-    <Content Include="templates\default - 副本\_rotatepic.htm" />
-    <Content Include="templates\default - 副本\_scoremenu.htm" />
-    <Content Include="templates\default - 副本\_seditor.htm" />
-    <Content Include="templates\default - 副本\_smiley.htm" />
-    <Content Include="templates\default - 副本\_smsmenu.htm" />
-    <Content Include="templates\default - 副本\_stylejump.htm" />
-    <Content Include="templates\default - 副本\_subeditor.htm" />
-    <Content Include="templates\default - 副本\_subforum.htm" />
-    <Content Include="templates\default - 副本\_subscribemenu.htm" />
-    <Content Include="templates\default - 副本\_tempaccounts.htm" />
-    <Content Include="templates\default - 副本\_usercperrmsgbox.htm" />
-    <Content Include="templates\default - 副本\_usercpmsgbox.htm" />
-    <Content Include="templates\default - 副本\_vcode.htm" />
-    <Content Include="templates\default - 副本\_websiteheader.htm" />
-    <Content Include="templates\default\HTMLPage1.htm" />
-    <Content Include="templates\default\images\search_logo.png" />
-    <Content Include="templates\default\other\bg.gif" />
-    <Content Include="templates\default\other\c5.css" />
-    <Content Include="templates\default\other\head_index.gif" />
-    <Content Include="templates\default\other\holder.gif" />
-    <Content Include="templates\default\other\panner.jpg" />
-    <Content Include="templates\default\other\site_photoexa.jpg" />
-    <Content Include="templates\default\other\site_photoqe.jpg" />
-    <Content Include="templates\default\other\site_photoref.jpg" />
-    <Content Include="templates\default\other\wrapper.gif" />
-    <Content Include="templates\default\showtopic1.htm" />
     <Content Include="templates\default\usercpcreditsbuy.htm" />
-    <Content Include="templates\default\_ajaxquickreply1.htm" />
-    <Content Include="templates\default\_copyrightEx.htm" />
-    <Content Include="templates\default\_header2.htm" />
-    <Content Include="templates\default\副本 showforum.htm" />
-    <Content Include="templates\default\副本 showtopic.htm" />
-    <Content Include="templates\model\about.png" />
-    <Content Include="templates\model\about.xml" />
-    <Content Include="templates\model\album\album.css" />
-    <Content Include="templates\model\album\images\albumLine.gif" />
-    <Content Include="templates\model\album\images\albumLine2.gif" />
-    <Content Include="templates\model\album\images\album_edit.gif" />
-    <Content Include="templates\model\album\images\album_fav.gif" />
-    <Content Include="templates\model\album\images\album_info.gif" />
-    <Content Include="templates\model\album\images\al_bg.gif" />
-    <Content Include="templates\model\album\images\attphoto.gif" />
-    <Content Include="templates\model\album\images\buttonreport.gif" />
-    <Content Include="templates\model\album\images\button_seeit.gif" />
-    <Content Include="templates\model\album\images\dotphoto.gif" />
-    <Content Include="templates\model\album\images\dotspace.gif" />
-    <Content Include="templates\model\album\images\error.gif" />
-    <Content Include="templates\model\album\images\errorphoto.gif" />
-    <Content Include="templates\model\album\images\focusbg.gif" />
-    <Content Include="templates\model\album\images\icon_album.gif" />
-    <Content Include="templates\model\album\images\icon_hot.gif" />
-    <Content Include="templates\model\album\images\lastother.gif" />
-    <Content Include="templates\model\album\images\lastupdate.gif" />
-    <Content Include="templates\model\album\images\nophoto.jpg" />
-    <Content Include="templates\model\album\images\picturebg.gif" />
-    <Content Include="templates\model\album\images\rank_bg.jpg" />
-    <Content Include="templates\model\album\images\reportfinish.gif" />
-    <Content Include="templates\model\album\images\right.gif" />
-    <Content Include="templates\model\album\images\ScrollarrowLeft.jpg" />
-    <Content Include="templates\model\album\images\ScrollarrowRight.jpg" />
-    <Content Include="templates\model\album\images\scrollphoto.jpg" />
-    <Content Include="templates\model\album\images\title_bg.jpg" />
-    <Content Include="templates\model\album\images\title_bg2.gif" />
-    <Content Include="templates\model\album\images\user_album.gif" />
-    <Content Include="templates\model\album\images\user_info.gif" />
-    <Content Include="templates\model\dnt.css" />
-    <Content Include="templates\model\editor.css" />
-    <Content Include="templates\model\float.css" />
-    <Content Include="templates\model\images\access_allow.gif" />
-    <Content Include="templates\model\images\access_normal.gif" />
-    <Content Include="templates\model\images\add_invite.gif" />
-    <Content Include="templates\model\images\ad_icon.gif" />
-    <Content Include="templates\model\images\agree.gif" />
-    <Content Include="templates\model\images\ajaxaction.gif" />
-    <Content Include="templates\model\images\album.gif" />
-    <Content Include="templates\model\images\announcement.gif" />
-    <Content Include="templates\model\images\arrow_down.gif" />
-    <Content Include="templates\model\images\arrow_down_big.gif" />
-    <Content Include="templates\model\images\arrow_left.gif" />
-    <Content Include="templates\model\images\arrow_right.gif" />
-    <Content Include="templates\model\images\arrow_right_big.gif" />
-    <Content Include="templates\model\images\attachinfobg.gif" />
-    <Content Include="templates\model\images\attachment.gif" />
-    <Content Include="templates\model\images\attachment_image.gif" />
-    <Content Include="templates\model\images\back.gif" />
-    <Content Include="templates\model\images\bigbtn.gif" />
-    <Content Include="templates\model\images\bodybg.gif" />
-    <Content Include="templates\model\images\bonus.gif" />
-    <Content Include="templates\model\images\btn_block.gif" />
-    <Content Include="templates\model\images\btn_post.gif" />
-    <Content Include="templates\model\images\btn_quickpost.gif" />
-    <Content Include="templates\model\images\check_error.gif" />
-    <Content Include="templates\model\images\check_right.gif" />
-    <Content Include="templates\model\images\codebg.gif" />
-    <Content Include="templates\model\images\collapsed_no.gif" />
-    <Content Include="templates\model\images\collapsed_yes.gif" />
-    <Content Include="templates\model\images\colorpicker.gif" />
-    <Content Include="templates\model\images\common_new.gif" />
-    <Content Include="templates\model\images\dashline.gif" />
-    <Content Include="templates\model\images\data_invalid.gif" />
-    <Content Include="templates\model\images\data_valid.gif" />
-    <Content Include="templates\model\images\debatesmall.gif" />
-    <Content Include="templates\model\images\del.gif" />
-    <Content Include="templates\model\images\del_hover.gif" />
-    <Content Include="templates\model\images\digest.gif" />
-    <Content Include="templates\model\images\digest1.gif" />
-    <Content Include="templates\model\images\digest2.gif" />
-    <Content Include="templates\model\images\digest3.gif" />
-    <Content Include="templates\model\images\digest_1.gif" />
-    <Content Include="templates\model\images\digest_2.gif" />
-    <Content Include="templates\model\images\digest_3.gif" />
-    <Content Include="templates\model\images\disagree.gif" />
-    <Content Include="templates\model\images\discuznt_logo.gif" />
-    <Content Include="templates\model\images\draftbox.gif" />
-    <Content Include="templates\model\images\edit.gif" />
-    <Content Include="templates\model\images\error.gif" />
-    <Content Include="templates\model\images\external.png" />
-    <Content Include="templates\model\images\fastreply.gif" />
-    <Content Include="templates\model\images\favorite.gif" />
-    <Content Include="templates\model\images\folder_closed.gif" />
-    <Content Include="templates\model\images\folder_lock.gif" />
-    <Content Include="templates\model\images\folder_move.gif" />
-    <Content Include="templates\model\images\folder_mytopic.gif" />
-    <Content Include="templates\model\images\folder_new.gif" />
-    <Content Include="templates\model\images\folder_newhot.gif" />
-    <Content Include="templates\model\images\folder_old.gif" />
-    <Content Include="templates\model\images\folder_oldhot.gif" />
-    <Content Include="templates\model\images\folder_s.gif" />
-    <Content Include="templates\model\images\forum.gif" />
-    <Content Include="templates\model\images\forumdigest.gif" />
-    <Content Include="templates\model\images\forum_new.gif" />
-    <Content Include="templates\model\images\frame_back.gif" />
-    <Content Include="templates\model\images\frame_go.gif" />
-    <Content Include="templates\model\images\gather\album_bg.gif" />
-    <Content Include="templates\model\images\gather\avator.jpg" />
-    <Content Include="templates\model\images\gather\avator_bg.jpg" />
-    <Content Include="templates\model\images\gather\btn_login.gif" />
-    <Content Include="templates\model\images\gather\btn_register.gif" />
-    <Content Include="templates\model\images\gather\btn_search.gif" />
-    <Content Include="templates\model\images\gather\butonbg.jpg" />
-    <Content Include="templates\model\images\gather\discuznt_logo.gif" />
-    <Content Include="templates\model\images\gather\icon.gif" />
-    <Content Include="templates\model\images\gather\keyword_bg.gif" />
-    <Content Include="templates\model\images\gather\menu_cur.gif" />
-    <Content Include="templates\model\images\gather\menu_li_bg.gif" />
-    <Content Include="templates\model\images\gather\nophoto.jpg" />
-    <Content Include="templates\model\images\gather\sel_search.gif" />
-    <Content Include="templates\model\images\gather\sidetitlebg.gif" />
-    <Content Include="templates\model\images\gather\sitelogo.gif" />
-    <Content Include="templates\model\images\gather\slide_pic.jpg" />
-    <Content Include="templates\model\images\gather\tabbg.gif" />
-    <Content Include="templates\model\images\gather\titlebg.gif" />
-    <Content Include="templates\model\images\gather\title_bg.gif" />
-    <Content Include="templates\model\images\gather\title_bg2.gif" />
-    <Content Include="templates\model\images\hint.gif" />
-    <Content Include="templates\model\images\home.gif" />
-    <Content Include="templates\model\images\iconleft.gif" />
-    <Content Include="templates\model\images\icon_announcement.gif" />
-    <Content Include="templates\model\images\icon_drop.gif" />
-    <Content Include="templates\model\images\icon_fav.gif" />
-    <Content Include="templates\model\images\icon_feed.gif" />
-    <Content Include="templates\model\images\icon_num.gif" />
-    <Content Include="templates\model\images\icon_quote_e.gif" />
-    <Content Include="templates\model\images\icon_quote_s.gif" />
-    <Content Include="templates\model\images\icon_search.gif" />
-    <Content Include="templates\model\images\icon_subnav.gif" />
-    <Content Include="templates\model\images\ip.gif" />
-    <Content Include="templates\model\images\lastedit.gif" />
-    <Content Include="templates\model\images\legend_reward.gif" />
-    <Content Include="templates\model\images\loading.gif" />
-    <Content Include="templates\model\images\locked.gif" />
-    <Content Include="templates\model\images\logo.gif" />
-    <Content Include="templates\model\images\mytopic.gif" />
-    <Content Include="templates\model\images\newarow.gif" />
-    <Content Include="templates\model\images\newclose.gif" />
-    <Content Include="templates\model\images\newtopic.gif" />
-    <Content Include="templates\model\images\noavatar_big.gif" />
-    <Content Include="templates\model\images\noavatar_medium.gif" />
-    <Content Include="templates\model\images\noavatar_small.gif" />
-    <Content Include="templates\model\images\online.gif" />
-    <Content Include="templates\model\images\page_bg.gif" />
-    <Content Include="templates\model\images\page_link.gif" />
-    <Content Include="templates\model\images\pmto.gif" />
-    <Content Include="templates\model\images\pm_0.gif" />
-    <Content Include="templates\model\images\pm_1.gif" />
-    <Content Include="templates\model\images\pollsmall.gif" />
-    <Content Include="templates\model\images\popupcredit_bg.gif" />
-    <Content Include="templates\model\images\popupcredit_btn.gif" />
-    <Content Include="templates\model\images\posts_new.gif" />
-    <Content Include="templates\model\images\ratesrcorebg.gif" />
-    <Content Include="templates\model\images\refresh.gif" />
-    <Content Include="templates\model\images\reply.gif" />
-    <Content Include="templates\model\images\repquote.gif" />
-    <Content Include="templates\model\images\rewardsmall.gif" />
-    <Content Include="templates\model\images\rewardsmallend.gif" />
-    <Content Include="templates\model\images\re_unsolved.gif" />
-    <Content Include="templates\model\images\right.gif" />
-    <Content Include="templates\model\images\rss2.gif" />
-    <Content Include="templates\model\images\showdigest.gif" />
-    <Content Include="templates\model\images\sidebg.gif" />
-    <Content Include="templates\model\images\sigline.gif" />
-    <Content Include="templates\model\images\space.gif" />
-    <Content Include="templates\model\images\star_level1.gif" />
-    <Content Include="templates\model\images\star_level2.gif" />
-    <Content Include="templates\model\images\star_level3.gif" />
-    <Content Include="templates\model\images\tag.gif" />
-    <Content Include="templates\model\images\text_common.gif" />
-    <Content Include="templates\model\images\text_zoom.gif" />
-    <Content Include="templates\model\images\toolbg.gif" />
-    <Content Include="templates\model\images\tradesmall.gif" />
-    <Content Include="templates\model\images\t_top1.gif" />
-    <Content Include="templates\model\images\t_top2.gif" />
-    <Content Include="templates\model\images\t_top3.gif" />
-    <Content Include="templates\model\images\usericon.gif" />
-    <Content Include="templates\model\images\useronline.gif" />
-    <Content Include="templates\model\images\useroutline.gif" />
-    <Content Include="templates\model\seditor.css" />
-    <Content Include="templates\model\space\space.css" />
-    <Content Include="templates\model\templatevariable.xml" />
-    <Content Include="templates\model\website.css" />
     <Content Include="upgrade\index.aspx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="archiver\Index.cs">
@@ -844,13 +257,6 @@
     <Compile Include="aspx\1\stats.aspx.cs">
       <DependentUpon>stats.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="aspx\1\SynCodeGet.aspx.cs">
-      <DependentUpon>SynCodeGet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="aspx\1\SynCodeGet.aspx.designer.cs">
-      <DependentUpon>SynCodeGet.aspx</DependentUpon>
     </Compile>
     <Compile Include="aspx\1\tags.aspx.cs">
       <DependentUpon>tags.aspx</DependentUpon>
@@ -1639,12 +1045,6 @@
     </Content>
     <Content Include="install\sqlscript\sqlserver\setup3.sql">
     </Content>
-    <None Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.SyntaxEditor.LanguageDefinition.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="content\codehighlighter\Languages\Lexers\ActiproSoftware.SyntaxEditor.LanguageDefinition.xsx">
-      <DependentUpon>ActiproSoftware.SyntaxEditor.LanguageDefinition.xsd</DependentUpon>
-    </None>
     <None Include="silverlight\Avatar\ClientBin\Discuz.WebCam.xap" />
     <None Include="silverlight\Avatar\ClientBin\HaoRan.WebCam.xap" />
     <None Include="silverlight\PieChart\ClientBin\PieChart.xap" />
@@ -2205,6 +1605,7 @@
     <Content Include="aspnet_client\system_web\2_0_50727\CrystalReportWebFormViewer3\JS\strings_ja.js" />
     <Content Include="aspnet_client\system_web\2_0_50727\CrystalReportWebFormViewer3\JS\strings_ko.js" />
     <Content Include="crossdomain.xml" />
+    <Content Include="favicon.ico" />
     <Content Include="robots.txt" />
     <Content Include="templates\default\album\album.css" />
     <Content Include="templates\default\album\albumindex.htm" />
@@ -2510,8 +1911,6 @@
     <Content Include="upgrade\step2.aspx" />
     <Content Include="upgrade\succeed.aspx" />
     <Content Include="watermark\watermark.png" />
-    <Content Include="templates\default\showforum.htm 的副本%282%29" />
-    <Content Include="templates\default\showtopic2.htm" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="silverlight\UploadFile\ClientBin\AppManifest.xaml">
@@ -2528,7 +1927,6 @@
     <Folder Include="avatars\upload\" />
     <Folder Include="cache\showforum\" />
     <Folder Include="cache\topic\" />
-    <Folder Include="templates\model\space\images\" />
     <Folder Include="upload\" />
   </ItemGroup>
   <PropertyGroup>

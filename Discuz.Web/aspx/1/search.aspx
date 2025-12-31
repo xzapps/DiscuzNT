@@ -10,8 +10,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by Discuz!NT Template Engine at 2013/11/19 13:52:55.
-		本页面代码由Discuz!NT模板引擎生成于 2013/11/19 13:52:55. 
+		This page was created by Discuz!NT Template Engine at 2014/7/31 14:03:05.
+		本页面代码由Discuz!NT模板引擎生成于 2014/7/31 14:03:05. 
 	*/
 
 	base.OnInit(e);
@@ -124,19 +124,19 @@ override protected void OnInit(EventArgs e)
 	if (page_err>0)
 	{
 
-	templateBuilder.Append("\r\n    <div class=\"wrap cl\">\r\n        <form action=\"search.aspx\" autocomplete=\"off\" name=\"postpm\" method=\"post\" class=\"searchform\">\r\n            <table cellspacing=\"0\" cellpadding=\"0\" class=\"mbm\" id=\"tpsch\">\r\n            <tbody>\r\n                <tr>\r\n                <td><h1><a title=\"北盟学坛\" href=\"");
+	templateBuilder.Append("\r\n    <div class=\"wrap cl\">\r\n        <form action=\"search.aspx\" autocomplete=\"off\" name=\"postpm\" method=\"post\" class=\"searchform\">\r\n            <table cellspacing=\"0\" cellpadding=\"0\" class=\"mbm\" id=\"tpsch\">\r\n            <tbody>\r\n                <tr>\r\n                <td><h1><a title=\"Discuz!NT|BBS|论坛\" href=\"");
 	templateBuilder.Append(forumpath.ToString());
-	templateBuilder.Append("index.aspx\"><img alt=\"北盟学坛\" src=\"");
+	templateBuilder.Append("index.aspx\"><img alt=\"Discuz!NT|BBS|论坛\" src=\"");
 	templateBuilder.Append(forumpath.ToString());
-	templateBuilder.Append("templates/default/images/search_logo.png\"></a></h1></td>\r\n                <td>\r\n                    <ul class=\"tb cl\">\r\n                        <li id=\"forumli\"><a href=\"search.aspx?keyword=");
+	templateBuilder.Append("templates/default/images/logo.png\"></a></h1></td>\r\n                <td>\r\n                    <ul class=\"tb cl\">\r\n                        <li id=\"forumli\"><a href=\"search.aspx?keyword=");
 	templateBuilder.Append(keyword.ToString());
-	templateBuilder.Append("&searchsubmit=1\"></a></li>\r\n                        ");
+	templateBuilder.Append("&searchsubmit=1\">论坛</a></li>\r\n                        ");
 	if (config.Enablespace==1)
 	{
 
 	templateBuilder.Append("\r\n                        <li id=\"spaceli\"><a id=\"spacelink\" href=\"search.aspx?type=spacepost&keyword=");
 	templateBuilder.Append(keyword.ToString());
-	templateBuilder.Append("&searchsubmit=1\"></a></li>\r\n                        ");
+	templateBuilder.Append("&searchsubmit=1\">日志</a></li>\r\n                        ");
 	}	//end if
 
 
@@ -145,7 +145,7 @@ override protected void OnInit(EventArgs e)
 
 	templateBuilder.Append("\r\n                        <li id=\"albumli\"><a id=\"albumlink\" href=\"search.aspx?type=album&keyword=");
 	templateBuilder.Append(keyword.ToString());
-	templateBuilder.Append("&searchsubmit=1\"></a></li>\r\n                        ");
+	templateBuilder.Append("&searchsubmit=1\">相册</a></li>\r\n                        ");
 	}	//end if
 
 	templateBuilder.Append("\r\n                    </ul>\r\n                    <script type=\"text/javascript\">\r\n                        var type = '");
@@ -200,11 +200,32 @@ override protected void OnInit(EventArgs e)
 	if (advsearch==0)
 	{
 
-	templateBuilder.Append("\r\n            <div class=\"search\">\r\n                <form action=\"\" name=\"postpm\" autocomplete=\"off\" method=\"post\" class=\"searchform\">\r\n                    <table cellspacing=\"0\" cellpadding=\"0\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td class=\"s_logo\"><h1 class=\"mtw ptw\"><a title=\"北盟学坛\" href=\"");
+	templateBuilder.Append("\r\n            <div class=\"search\">\r\n                <form action=\"\" name=\"postpm\" autocomplete=\"off\" method=\"post\" class=\"searchform\">\r\n                    <table cellspacing=\"0\" cellpadding=\"0\">\r\n                    <tbody>\r\n                    <tr>\r\n                        <td class=\"s_logo\"><h1 class=\"mtw ptw\"><a title=\"Discuz!NT|BBS|论坛\" href=\"");
 	templateBuilder.Append(forumpath.ToString());
-	templateBuilder.Append("index.aspx\"><img alt=\"北盟学坛\" src=\"");
+	templateBuilder.Append("index.aspx\"><img alt=\"Discuz!NT|BBS|论坛\" src=\"");
 	templateBuilder.Append(forumpath.ToString());
-	templateBuilder.Append("templates/default/images/search_logo.png\"></a></h1></td>\r\n                        <td colspan=\"2\"></td>\r\n                    </tr>\r\n                    <tr id=\"tps_form\">\r\n                        <td>\r\n                            <input type=\"text\" tabindex=\"1\" class=\"schtxt\" value=\"\" maxlength=\"40\" size=\"65\" name=\"keyword\" id=\"srchtxt\">\r\n                        </td>\r\n                        <td>\r\n                            <button class=\"schbtn\" value=\"true\" id=\"tps_btn\" type=\"submit\"><strong>搜索</strong></button>\r\n                        </td>\r\n                        <td style=\"padding-left:10px; width: 50px; background:#FFF; text-align: left;\">\r\n                            <label><a href=\"search.aspx?advsearch=1\">高级</a>\r\n                        </td>\r\n                    </tr>\r\n                    </tbody>\r\n                    </table>\r\n                </form>\r\n                ");
+	templateBuilder.Append("templates/default/images/logo.png\"></a></h1></td>\r\n                        <td colspan=\"2\"></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <td width=\"400\" class=\"hm xs2\">\r\n                            ");
+	if (config.Enablespace==1||config.Enablealbum==1)
+	{
+
+	templateBuilder.Append("\r\n                            <a id=\"forumlink\" href=\"search.aspx\">论坛</a>\r\n                            ");
+	}	//end if
+
+
+	if (config.Enablespace==1)
+	{
+
+	templateBuilder.Append("\r\n                            <span class=\"pipe\">|</span><a id=\"spacelink\" href=\"search.aspx?type=spacepost\">空间</a>\r\n                            ");
+	}	//end if
+
+
+	if (config.Enablealbum==1)
+	{
+
+	templateBuilder.Append("\r\n                            <span class=\"pipe\">|</span><a id=\"albumlink\" href=\"search.aspx?type=album\">相册</a>\r\n                            ");
+	}	//end if
+
+	templateBuilder.Append("\r\n                        </td>\r\n                        <td colspan=\"2\"></td>\r\n                    </tr>\r\n                    <tr id=\"tps_form\">\r\n                        <td>\r\n                            <input type=\"text\" tabindex=\"1\" class=\"schtxt\" value=\"\" maxlength=\"40\" size=\"65\" name=\"keyword\" id=\"srchtxt\">\r\n                        </td>\r\n                        <td>\r\n                            <button class=\"schbtn\" value=\"true\" id=\"tps_btn\" type=\"submit\"><strong>搜索</strong></button>\r\n                        </td>\r\n                        <td style=\"padding-left:10px; width: 50px; background:#FFF; text-align: left;\">\r\n                            <label><a href=\"search.aspx?advsearch=1\">高级</a>\r\n                        </td>\r\n                    </tr>\r\n                    </tbody>\r\n                    </table>\r\n                </form>\r\n                ");
 	if (config.Enablespace==1||config.Enablealbum==1)
 	{
 
@@ -219,24 +240,40 @@ override protected void OnInit(EventArgs e)
 	else
 	{
 
-	templateBuilder.Append("\r\n            <div class=\"wrap cl\">\r\n            <form id=\"postpm\" name=\"postpm\" method=\"post\" onsubmit=\"if(this.chkAuthor.checked) $('type').value='author';return true;\" action=\"\">\r\n                <div id=\"options_item\">\r\n                    <div id=\"postoptions\">\r\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"tfm\">\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"searchforumid\">搜索范围</label></th>\r\n	                                <td>\r\n		                                <select name=\"searchforumid\" size=\"12\" style=\"width:450px\" multiple=\"multiple\" id=\"searchforumid\">\r\n		                                 <option selected value=\"\">---------- 所有分类(默认) ----------</option>\r\n			                                <!--模版中所有版块的下拉框中一定要加入value=\"\"否则会提示没有选择版块-->\r\n			                                ");
+	templateBuilder.Append("\r\n            <div class=\"wrap cl\">\r\n            <form id=\"postpm\" name=\"postpm\" method=\"post\" onsubmit=\"if(this.chkAuthor.checked) $('type').value='author';return true;\" action=\"\">\r\n                <div id=\"options_item\">\r\n                    <div id=\"postoptions\">\r\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"tfm\">\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"posttableid\">选择分表</label></th>\r\n	                                <td>\r\n		                                <select name=\"posttableid\" id=\"posttableid\">\r\n		                                ");
+	int table__loop__id=0;
+	foreach(DataRow table in tablelist.Rows)
+	{
+		table__loop__id++;
+
+	templateBuilder.Append("\r\n			                                <option value=\"" + table["id"].ToString().Trim() + "\">" + table["description"].ToString().Trim() + "");
+	if (Utils.StrToInt(table__loop__id, 0)==1)
+	{
+
+	templateBuilder.Append("(当前使用)");
+	}	//end if
+
+	templateBuilder.Append("</option>\r\n		                                ");
+	}	//end loop
+
+	templateBuilder.Append("\r\n		                                </select>\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"searchtime\">时间</label></th>\r\n	                                <td>\r\n		                                <select name=\"searchtime\" id=\"searchtime\">\r\n		                                  <option value=\"0\" selected=\"selected\">全部时间</option>\r\n		                                  <option value=\"-1\">1天</option>\r\n		                                  <option value=\"-2\">2天</option>\r\n		                                  <option value=\"-3\">3天</option>\r\n		                                  <option value=\"-7\">1周</option>\r\n		                                  <option value=\"-30\">1个月</option>\r\n		                                  <option value=\"-90\">3个月</option>\r\n		                                  <option value=\"-180\">半年</option>\r\n		                                  <option value=\"-365\">1年</option>\r\n		                                </select>\r\n		                                <input type=\"radio\" name=\"searchtimetype\"  value=\"1\" />以前\r\n		                                <input type=\"radio\" name=\"searchtimetype\" value=\"0\" checked />以内\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"resultorder\">结果排序</label></th>\r\n	                                <td>\r\n		                                <select name=\"resultorder\" id=\"resultorder\">\r\n		                                  <option value=\"0\" selected=\"selected\">最后回复时间</option>\r\n		                                  <option value=\"1\">发表时间</option>\r\n		                                  <option value=\"2\">回复数量</option>\r\n		                                  <option value=\"3\">查看次数</option>\r\n		                                </select>\r\n		                                <input type=\"radio\" name=\"resultordertype\" value=\"1\" />升序\r\n		                                <input type=\"radio\" name=\"resultordertype\" value=\"0\" checked />降序\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"searchforumid\">搜索范围</label></th>\r\n	                                <td>\r\n		                                <select name=\"searchforumid\" size=\"12\" style=\"width:450px\" multiple=\"multiple\" id=\"searchforumid\">\r\n		                                 <option selected value=\"\">---------- 所有版块(默认) ----------</option>\r\n			                                <!--模版中所有版块的下拉框中一定要加入value=\"\"否则会提示没有选择版块-->\r\n			                                ");
 	templateBuilder.Append(Caches.GetForumListBoxOptionsCache(true).ToString().Trim());
-	templateBuilder.Append("\r\n		                                 </select>\r\n		                                 <p>(按Ctrl或Shift键可以多选,不选择)</p>\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                    <div id=\"spacepostoptions\">\r\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\"  class=\"tfm\">\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"searchtime\">时间</label></th>\r\n	                                <td>\r\n		                                <select name=\"searchtime\" id=\"searchtime\">\r\n		                                  <option value=\"0\" selected=\"selected\">全部时间</option>\r\n		                                  <option value=\"-1\">1天</option>\r\n		                                  <option value=\"-2\">2天</option>\r\n		                                  <option value=\"-3\">3天</option>\r\n		                                  <option value=\"-7\">1周</option>\r\n		                                  <option value=\"-30\">1个月</option>\r\n		                                  <option value=\"-90\">3个月</option>\r\n		                                  <option value=\"-180\">半年</option>\r\n		                                  <option value=\"-365\">1年</option>\r\n		                                </select>\r\n		                                  <input type=\"radio\" name=\"searchtimetype\" value=\"1\" />\r\n		                                以前\r\n		                                <input name=\"searchtimetype\" type=\"radio\" value=\"0\"/>\r\n		                                以内\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"resultorder\">结果排序</label></th>\r\n	                                <td>\r\n		                                <select name=\"resultorder\" id=\"resultorder\">\r\n                                          <option value=\"0\" selected=\"selected\">发表时间</option>\r\n                                          <option value=\"1\">回复数量</option>\r\n                                          <option value=\"2\">查看次数</option>\r\n		                                </select>\r\n		                                <input type=\"radio\" name=\"resultordertype\" value=\"1\" />\r\n		                                升序\r\n		                                <input name=\"resultordertype\" type=\"radio\" value=\"0\"/>\r\n		                                降序\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                    <div id=\"albumoptions\">\r\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\"  class=\"tfm\">\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"searchtime\">时间</label></th>\r\n	                                <td>\r\n		                                <select name=\"searchtime\" id=\"searchtime\">\r\n		                                  <option value=\"0\" selected=\"selected\">全部时间</option>\r\n		                                  <option value=\"-1\">1天前</option>\r\n		                                  <option value=\"-2\">2天前</option>\r\n		                                  <option value=\"-3\">3天前</option>\r\n		                                  <option value=\"-7\">1周前</option>\r\n		                                  <option value=\"-30\">1个月前</option>\r\n		                                  <option value=\"-90\">3个月前</option>\r\n		                                  <option value=\"-180\">半年前</option>\r\n		                                  <option value=\"-365\">1年前</option>\r\n		                                </select>\r\n		                                  <input type=\"radio\" name=\"searchtimetype\" value=\"1\" />\r\n		                                之前\r\n		                                <input name=\"searchtimetype\" type=\"radio\" value=\"0\" />\r\n		                                之后\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"resultorder\">结果排序</label></th>\r\n	                                <td>\r\n		                                <select name=\"resultorder\" id=\"resultorder\">\r\n		                                  <option value=\"0\" selected=\"selected\">创建时间</option>\r\n		                                </select>\r\n		                                <input type=\"radio\" name=\"resultordertype\" value=\"1\" />\r\n		                                升序\r\n		                                <input name=\"resultordertype\" type=\"radio\" value=\"0\" />\r\n		                                降序\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                </div>\r\n                <table cellspacing=\"0\" cellpadding=\"0\" class=\"mbm\" id=\"tpsch\">\r\n                    <tbody>\r\n                        <tr>\r\n                            <td><h1><a title=\"北盟学坛\" href=\"");
+	templateBuilder.Append("\r\n		                                 </select>\r\n		                                 <p>(按Ctrl或Shift键可以多选,不选择)</p>\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                    <div id=\"spacepostoptions\">\r\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\"  class=\"tfm\">\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"searchtime\">时间</label></th>\r\n	                                <td>\r\n		                                <select name=\"searchtime\" id=\"searchtime\">\r\n		                                  <option value=\"0\" selected=\"selected\">全部时间</option>\r\n		                                  <option value=\"-1\">1天</option>\r\n		                                  <option value=\"-2\">2天</option>\r\n		                                  <option value=\"-3\">3天</option>\r\n		                                  <option value=\"-7\">1周</option>\r\n		                                  <option value=\"-30\">1个月</option>\r\n		                                  <option value=\"-90\">3个月</option>\r\n		                                  <option value=\"-180\">半年</option>\r\n		                                  <option value=\"-365\">1年</option>\r\n		                                </select>\r\n		                                  <input type=\"radio\" name=\"searchtimetype\" value=\"1\" />\r\n		                                以前\r\n		                                <input name=\"searchtimetype\" type=\"radio\" value=\"0\"/>\r\n		                                以内\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"resultorder\">结果排序</label></th>\r\n	                                <td>\r\n		                                <select name=\"resultorder\" id=\"resultorder\">\r\n                                          <option value=\"0\" selected=\"selected\">发表时间</option>\r\n                                          <option value=\"1\">回复数量</option>\r\n                                          <option value=\"2\">查看次数</option>\r\n		                                </select>\r\n		                                <input type=\"radio\" name=\"resultordertype\" value=\"1\" />\r\n		                                升序\r\n		                                <input name=\"resultordertype\" type=\"radio\" value=\"0\"/>\r\n		                                降序\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                    <div id=\"albumoptions\">\r\n                        <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\"  class=\"tfm\">\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"searchtime\">时间</label></th>\r\n	                                <td>\r\n		                                <select name=\"searchtime\" id=\"searchtime\">\r\n		                                  <option value=\"0\" selected=\"selected\">全部时间</option>\r\n		                                  <option value=\"-1\">1天前</option>\r\n		                                  <option value=\"-2\">2天前</option>\r\n		                                  <option value=\"-3\">3天前</option>\r\n		                                  <option value=\"-7\">1周前</option>\r\n		                                  <option value=\"-30\">1个月前</option>\r\n		                                  <option value=\"-90\">3个月前</option>\r\n		                                  <option value=\"-180\">半年前</option>\r\n		                                  <option value=\"-365\">1年前</option>\r\n		                                </select>\r\n		                                  <input type=\"radio\" name=\"searchtimetype\" value=\"1\" />\r\n		                                之前\r\n		                                <input name=\"searchtimetype\" type=\"radio\" value=\"0\" />\r\n		                                之后\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                            <tbody>\r\n                                <tr>\r\n	                                <th><label for=\"resultorder\">结果排序</label></th>\r\n	                                <td>\r\n		                                <select name=\"resultorder\" id=\"resultorder\">\r\n		                                  <option value=\"0\" selected=\"selected\">创建时间</option>\r\n		                                </select>\r\n		                                <input type=\"radio\" name=\"resultordertype\" value=\"1\" />\r\n		                                升序\r\n		                                <input name=\"resultordertype\" type=\"radio\" value=\"0\" />\r\n		                                降序\r\n	                                </td>\r\n                                </tr>\r\n                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                </div>\r\n                <table cellspacing=\"0\" cellpadding=\"0\" class=\"mbm\" id=\"tpsch\">\r\n                    <tbody>\r\n                        <tr>\r\n                            <td><h1><a title=\"Discuz!NT|BBS|论坛\" href=\"");
 	templateBuilder.Append(forumpath.ToString());
-	templateBuilder.Append("index.aspx\"><img alt=\"北盟学坛\" src=\"");
+	templateBuilder.Append("index.aspx\"><img alt=\"Discuz!NT|BBS|论坛\" src=\"");
 	templateBuilder.Append(forumpath.ToString());
-	templateBuilder.Append("templates/default/images/search_logo.png\"></a></h1></td>\r\n                            <td>\r\n                                <ul class=\"tb cl\">\r\n                                    <li id=\"forumli\" class=\"a\"><a href=\"search.aspx\"></a></li>\r\n                                    ");
+	templateBuilder.Append("templates/default/images/logo.png\"></a></h1></td>\r\n                            <td>\r\n                                <ul class=\"tb cl\">\r\n                                    <li id=\"forumli\" class=\"a\"><a href=\"search.aspx\">论坛</a></li>\r\n                                    ");
 	if (config.Enablespace==1)
 	{
 
-	templateBuilder.Append("\r\n                                    <li id=\"spaceli\"><a href=\"search.aspx?type=spacepost\"></a></li>\r\n                                    ");
+	templateBuilder.Append("\r\n                                    <li id=\"spaceli\"><a href=\"search.aspx?type=spacepost\">日志</a></li>\r\n                                    ");
 	}	//end if
 
 
 	if (config.Enablealbum==1)
 	{
 
-	templateBuilder.Append("\r\n                                    <li id=\"albumli\"><a href=\"search.aspx?type=album\"></a></li>\r\n                                    ");
+	templateBuilder.Append("\r\n                                    <li id=\"albumli\"><a href=\"search.aspx?type=album\">相册</a></li>\r\n                                    ");
 	}	//end if
 
 	templateBuilder.Append("\r\n                                </ul>\r\n<!--                                <input type=\"hidden\" value=\"");
@@ -246,7 +283,28 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("';\r\n                                    switch (type) {\r\n                                        case 'spacepost': $('spaceli').className = 'a'; break;\r\n                                        case 'album': $('albumli').className = 'a'; break;\r\n                                        default: $('forumli').className = 'a'; break;\r\n                                    }\r\n                                </");
 	templateBuilder.Append("script>-->\r\n                                <table cellspacing=\"0\" cellpadding=\"0\" id=\"tps_form\">\r\n	                                <tbody>\r\n	                                <tr>\r\n		                                <td>\r\n			                                <input type=\"text\" tabindex=\"1\" value=\"");
 	templateBuilder.Append(keyword.ToString());
-	templateBuilder.Append("\" maxlength=\"40\" size=\"45\" class=\"schtxt\" name=\"keyword\" id=\"srchtxt\">\r\n		                                </td>\r\n		                                <td>\r\n			                                <button id=\"tps_btn\" class=\"schbtn\" type=\"submit\"><strong>搜索</strong></button>\r\n		                                </td>\r\n		                                <td style=\"padding-left: 10px; background:#FFF;\">\r\n			                                <label><a href=\"search.aspx\">返回普通搜索</a></label>\r\n		                                </td>\r\n	                                </tr>\r\n	                                </tbody>\r\n                                </table>\r\n                            </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n                <div id=\"options\" style=\"margin-top:-1px;\"></div>\r\n                <script type=\"text/javascript\"  src=\"");
+	templateBuilder.Append("\" maxlength=\"40\" size=\"45\" class=\"schtxt\" name=\"keyword\" id=\"srchtxt\">\r\n		                                </td>\r\n		                                <td>\r\n			                                <button id=\"tps_btn\" class=\"schbtn\" type=\"submit\"><strong>搜索</strong></button>\r\n		                                </td>\r\n		                                <td style=\"padding-left: 10px; background:#FFF;\">\r\n			                                <label><a href=\"search.aspx\">返回普通搜索</a></label>\r\n		                                </td>\r\n	                                </tr>\r\n	                                </tbody>\r\n                                </table>\r\n                            </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n                <table cellSpacing=\"0\" cellPadding=\"0\" summary=\"搜索选项\"  class=\"tfm\">\r\n                    <thead>\r\n                    <tr>\r\n	                    <th id=\"divsearchoption\">搜索选项</th>\r\n	                    <td>&nbsp;</td>\r\n                    </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr>\r\n	                        <th><label for=\"poster\">作者</label></th>\r\n	                        <td>\r\n	                            <input name=\"poster\" type=\"text\" id=\"poster\" size=\"45\" class=\"txt\" />\r\n	                            <input type=\"checkbox\" value=\"1\" id=\"chkAuthor\" name=\"chkAuthor\" onclick=\"checkauthoroption(this);\" />搜索该作者所有帖子及相关内容\r\n	                        </td>\r\n                        </tr>\r\n                    </tbody>\r\n                    <tbody id=\"divsearchtype\">\r\n                        <tr>\r\n	                        <th><label for=\"poster\">搜索类型</label></th>\r\n	                        <td>\r\n	                            <input type=\"hidden\" name=\"type\" value=\"\" id=\"type\" />\r\n		                        <input name=\"keywordtype\" type=\"radio\" value=\"0\" checked onclick=\"changeoption('');\" />\r\n		                        全部主题搜索\r\n		                        <input name=\"keywordtype\" type=\"radio\" value=\"4\" onclick=\"changeoption('digest');\"/>\r\n		                        精华主题搜索\r\n		                        ");
+	if (usergroupinfo.Allowsearch==1)
+	{
+
+	templateBuilder.Append("\r\n			                        <input type=\"radio\" name=\"keywordtype\" value=\"1\" onclick=\"changeoption('post');\" />\r\n		                        全文搜索\r\n		                        ");
+	}	//end if
+
+
+	if (config.Enablespace==1)
+	{
+
+	templateBuilder.Append("\r\n		                        <input type=\"radio\" name=\"keywordtype\" value=\"2\" onclick=\"changeoption('spacepost');\" />\r\n		                        日志搜索\r\n		                        ");
+	}	//end if
+
+
+	if (config.Enablealbum==1)
+	{
+
+	templateBuilder.Append("\r\n		                        <input type=\"radio\" name=\"keywordtype\" value=\"3\" onclick=\"changeoption('album');\"/>\r\n		                        相册搜索\r\n		                        ");
+	}	//end if
+
+	templateBuilder.Append("\r\n	                        </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n                <div id=\"options\" style=\"margin-top:-1px;\"></div>\r\n                <script type=\"text/javascript\"  src=\"");
 	templateBuilder.Append(jsdir.ToString());
 	templateBuilder.Append("/template_search.js\"></");
 	templateBuilder.Append("script>	\r\n                <table cellSpacing=\"0\" cellPadding=\"0\" summary=\"搜索类型\" class=\"tfm\">\r\n                    <tbody>\r\n                    <tr><th></th><td><button name=\"submit\" type=\"submit\" id=\"submit\" class=\"pn\"><span>执行搜索</span></button></td></tr>\r\n                    </tbody>\r\n                </table>\r\n             </form>\r\n             </div>\r\n        ");
@@ -257,11 +315,11 @@ override protected void OnInit(EventArgs e)
 	else
 	{
 
-	templateBuilder.Append("\r\n        <div class=\"wrap cl\">\r\n            <form action=\"search.aspx\" autocomplete=\"off\" name=\"postpm\" method=\"post\" class=\"searchform\">\r\n                <table cellspacing=\"0\" cellpadding=\"0\" class=\"mbm\" id=\"tpsch\">\r\n                <tbody>\r\n                    <tr>\r\n                    <td><h1><a title=\"北盟学坛\" href=\"");
+	templateBuilder.Append("\r\n        <div class=\"wrap cl\">\r\n            <form action=\"search.aspx\" autocomplete=\"off\" name=\"postpm\" method=\"post\" class=\"searchform\">\r\n                <table cellspacing=\"0\" cellpadding=\"0\" class=\"mbm\" id=\"tpsch\">\r\n                <tbody>\r\n                    <tr>\r\n                    <td><h1><a title=\"Discuz!NT|BBS|论坛\" href=\"");
 	templateBuilder.Append(forumpath.ToString());
-	templateBuilder.Append("index.aspx\"><img alt=\"北盟学坛\" src=\"");
+	templateBuilder.Append("index.aspx\"><img alt=\"Discuz!NT|BBS|论坛\" src=\"");
 	templateBuilder.Append(forumpath.ToString());
-	templateBuilder.Append("templates/default/images/search_logo.png\"></a></h1></td>\r\n                    <td>\r\n                    <ul class=\"tb cl\">\r\n                        <li id=\"forumli\"><a href=\"search.aspx?keyword=");
+	templateBuilder.Append("templates/default/images/logo.png\"></a></h1></td>\r\n                    <td>\r\n                    <ul class=\"tb cl\">\r\n                        <li id=\"forumli\"><a href=\"search.aspx?keyword=");
 	templateBuilder.Append(keyword.ToString());
 	templateBuilder.Append("&searchsubmit=1\">论坛</a></li>\r\n                        ");
 	if (config.Enablespace==1)
@@ -558,6 +616,20 @@ override protected void OnInit(EventArgs e)
 	if (infloat!=1)
 	{
 
+
+	if (pagename=="website.aspx")
+	{
+
+	templateBuilder.Append("    \r\n       <div id=\"websitebottomad\"></div>\r\n");
+	}
+	else if (footerad!="")
+	{
+
+	templateBuilder.Append(" \r\n     <div id=\"ad_footerbanner\">");
+	templateBuilder.Append(footerad.ToString());
+	templateBuilder.Append("</div>   \r\n");
+	}	//end if
+
 	templateBuilder.Append("\r\n<div id=\"footer\">\r\n	<div class=\"wrap\"  id=\"wp\">\r\n		<div id=\"footlinks\">\r\n			<p><a href=\"");
 	templateBuilder.Append(config.Weburl.ToString().Trim());
 	templateBuilder.Append("\" target=\"_blank\">");
@@ -578,7 +650,36 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\r\n			");
 	templateBuilder.Append(config.Statcode.ToString().Trim());
 	templateBuilder.Append(config.Icp.ToString().Trim());
-	templateBuilder.Append("\r\n			</p>\r\n            <div>广告合作：admin@bamn.cn&nbsp;&nbsp;</div>\r\n		</div>\r\n		<p id=\"copyright\">\r\n			Powered by <strong><a href=\"http://nt.discuz.net\" target=\"_blank\" title=\"Discuz!NT\">DiscuzNT</a></strong> 技术支持：<strong><a href=\"http://www.moodsoft.cn\" target=\"_blank\" title=\"Discuz!NT\">MoodSoft</a></strong>\r\n			&copy; 2012-2013 BaMn Inc.\r\n		</p>\r\n		<p id=\"debuginfo\" class=\"grayfont\">\r\n		");
+	templateBuilder.Append("\r\n			</p>\r\n			<div>\r\n				<a href=\"http://www.comsenz.com/\" target=\"_blank\">Comsenz Technology Ltd</a>\r\n				- <a href=\"");
+	templateBuilder.Append(forumurl.ToString());
+	templateBuilder.Append("archiver/index.aspx\" target=\"_blank\">简洁版本</a>\r\n			");
+	if (config.Stylejump==1)
+	{
+
+
+	if (userid!=-1 || config.Guestcachepagetimeout<=0)
+	{
+
+	templateBuilder.Append("\r\n				- <span id=\"styleswitcher\" class=\"drop\" onmouseover=\"showMenu({'ctrlid':this.id, 'pos':'21'})\" onclick=\"window.location.href='");
+	templateBuilder.Append(forumurl.ToString());
+	templateBuilder.Append("showtemplate.aspx'\">界面风格</span>\r\n				");
+	}	//end if
+
+
+	}	//end if
+
+	templateBuilder.Append("\r\n			</div>\r\n		</div>\r\n		<a title=\"Powered by Discuz!NT\" target=\"_blank\" href=\"http://nt.discuz.net\"><img border=\"0\" alt=\"Discuz!NT\" src=\"");
+	templateBuilder.Append(imagedir.ToString());
+	templateBuilder.Append("/discuznt_logo.gif\"/></a>\r\n		<p id=\"copyright\">\r\n			Powered by <strong><a href=\"http://nt.discuz.net\" target=\"_blank\" title=\"Discuz!NT\">Discuz!NT</a></strong> <em class=\"f_bold\">3.6.711</em>\r\n			");
+	if (config.Licensed==1)
+	{
+
+	templateBuilder.Append("\r\n				(<a href=\"\" onclick=\"this.href='http://nt.discuz.net/certificate/?host='+location.href.substring(0, location.href.lastIndexOf('/'))\" target=\"_blank\">Licensed</a>)\r\n			");
+	}	//end if
+
+	templateBuilder.Append("\r\n				");
+	templateBuilder.Append(config.Forumcopyright.ToString().Trim());
+	templateBuilder.Append("\r\n		</p>\r\n		<p id=\"debuginfo\" class=\"grayfont\">\r\n		");
 	if (config.Debug!=0)
 	{
 
@@ -608,7 +709,236 @@ override protected void OnInit(EventArgs e)
 
 	}	//end if
 
-	templateBuilder.Append("\r\n		</p>\r\n	</div>\r\n</div>\r\n\r\n\r\n");
+	templateBuilder.Append("\r\n		</p>\r\n	</div>\r\n</div>\r\n<a id=\"scrolltop\" href=\"javascript:;\" style=\"display:none;\" class=\"scrolltop\" onclick=\"setScrollToTop(this.id);\">TOP</a>\r\n<ul id=\"usercenter_menu\" class=\"p_pop\" style=\"display:none;\">\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercpprofile.aspx?action=avatar\">设置头像</a></li>\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercpprofile.aspx\">个人资料</a></li>\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercpnewpassword.aspx\">更改密码</a></li>\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercp.aspx\">用户组</a></li>\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercpsubscribe.aspx\">收藏夹</a></li>\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercpcreditspay.aspx\">积分</a></li>\r\n</ul>\r\n\r\n");
+	int prentid__loop__id=0;
+	foreach(string prentid in mainnavigationhassub)
+	{
+		prentid__loop__id++;
+
+	templateBuilder.Append("\r\n<ul class=\"p_pop\" id=\"menu_");
+	templateBuilder.Append(prentid.ToString());
+	templateBuilder.Append("_menu\" style=\"display: none\">\r\n");
+	int subnav__loop__id=0;
+	foreach(DataRow subnav in subnavigation.Rows)
+	{
+		subnav__loop__id++;
+
+	bool isoutput = false;
+	
+
+	if (subnav["parentid"].ToString().Trim()==prentid)
+	{
+
+
+	if (subnav["level"].ToString().Trim()=="0")
+	{
+
+	 isoutput = true;
+	
+
+	}
+	else
+	{
+
+
+	if (subnav["level"].ToString().Trim()=="1" && userid!=-1)
+	{
+
+	 isoutput = true;
+	
+
+	}
+	else
+	{
+
+	bool leveluseradmindi = true;
+	
+	 leveluseradmindi = (useradminid==3 || useradminid==1 || useradminid==2);
+	
+
+	if (subnav["level"].ToString().Trim()=="2" &&  leveluseradmindi)
+	{
+
+	 isoutput = true;
+	
+
+	}	//end if
+
+
+	if (subnav["level"].ToString().Trim()=="3" && useradminid==1)
+	{
+
+	 isoutput = true;
+	
+
+	}	//end if
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	if (isoutput)
+	{
+
+
+	if (subnav["id"].ToString().Trim()=="11" || subnav["id"].ToString().Trim()=="12")
+	{
+
+
+	if (config.Statstatus==1)
+	{
+
+	templateBuilder.Append("\r\n	" + subnav["nav"].ToString().Trim() + "\r\n        ");	continue;
+
+
+	}
+	else
+	{
+
+	continue;
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	if (subnav["id"].ToString().Trim()=="18")
+	{
+
+
+	if (config.Oltimespan>0)
+	{
+
+	templateBuilder.Append("\r\n    " + subnav["nav"].ToString().Trim() + "\r\n	");	continue;
+
+
+	}
+	else
+	{
+
+	continue;
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	if (subnav["id"].ToString().Trim()=="24")
+	{
+
+
+	if (config.Enablespace==1)
+	{
+
+	templateBuilder.Append("\r\n    " + subnav["nav"].ToString().Trim() + "\r\n 	");	continue;
+
+
+	}
+	else
+	{
+
+	continue;
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	if (subnav["id"].ToString().Trim()=="25")
+	{
+
+
+	if (config.Enablealbum==1)
+	{
+
+	templateBuilder.Append("\r\n    " + subnav["nav"].ToString().Trim() + "\r\n 	");	continue;
+
+
+	}
+	else
+	{
+
+	continue;
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	if (subnav["id"].ToString().Trim()=="26")
+	{
+
+
+	if (config.Enablemall>=1)
+	{
+
+	templateBuilder.Append("\r\n    " + subnav["nav"].ToString().Trim() + "\r\n   	");	continue;
+
+
+	}
+	else
+	{
+
+	continue;
+
+
+	}	//end if
+
+
+	}	//end if
+
+	templateBuilder.Append("\r\n    " + subnav["nav"].ToString().Trim() + "\r\n");
+	}	//end if
+
+
+	}	//end loop
+
+	templateBuilder.Append("\r\n</ul>\r\n");
+	}	//end loop
+
+
+	if (config.Stylejump==1)
+	{
+
+
+	if (userid!=-1 || config.Guestcachepagetimeout<=0)
+	{
+
+	templateBuilder.Append("\r\n	<ul id=\"styleswitcher_menu\" class=\"popupmenu_popup s_clear\" style=\"display: none;\">\r\n	");
+	templateBuilder.Append(templatelistboxoptions.ToString());
+	templateBuilder.Append("\r\n	</ul>\r\n	");
+	}	//end if
+
+
+	}	//end if
+
+
 
 
 	templateBuilder.Append("</body>\r\n</html>\r\n");

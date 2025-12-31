@@ -10,8 +10,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by Discuz!NT Template Engine at 2013/11/19 13:53:12.
-		本页面代码由Discuz!NT模板引擎生成于 2013/11/19 13:53:12. 
+		This page was created by Discuz!NT Template Engine at 2014/7/31 14:03:13.
+		本页面代码由Discuz!NT模板引擎生成于 2014/7/31 14:03:13. 
 	*/
 
 	base.OnInit(e);
@@ -539,6 +539,20 @@ override protected void OnInit(EventArgs e)
 	if (infloat!=1)
 	{
 
+
+	if (pagename=="website.aspx")
+	{
+
+	templateBuilder.Append("    \r\n       <div id=\"websitebottomad\"></div>\r\n");
+	}
+	else if (footerad!="")
+	{
+
+	templateBuilder.Append(" \r\n     <div id=\"ad_footerbanner\">");
+	templateBuilder.Append(footerad.ToString());
+	templateBuilder.Append("</div>   \r\n");
+	}	//end if
+
 	templateBuilder.Append("\r\n<div id=\"footer\">\r\n	<div class=\"wrap\"  id=\"wp\">\r\n		<div id=\"footlinks\">\r\n			<p><a href=\"");
 	templateBuilder.Append(config.Weburl.ToString().Trim());
 	templateBuilder.Append("\" target=\"_blank\">");
@@ -559,7 +573,36 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\r\n			");
 	templateBuilder.Append(config.Statcode.ToString().Trim());
 	templateBuilder.Append(config.Icp.ToString().Trim());
-	templateBuilder.Append("\r\n			</p>\r\n            <div>广告合作：admin@bamn.cn&nbsp;&nbsp;</div>\r\n		</div>\r\n		<p id=\"copyright\">\r\n			Powered by <strong><a href=\"http://nt.discuz.net\" target=\"_blank\" title=\"Discuz!NT\">DiscuzNT</a></strong> 技术支持：<strong><a href=\"http://www.moodsoft.cn\" target=\"_blank\" title=\"Discuz!NT\">MoodSoft</a></strong>\r\n			&copy; 2012-2013 BaMn Inc.\r\n		</p>\r\n		<p id=\"debuginfo\" class=\"grayfont\">\r\n		");
+	templateBuilder.Append("\r\n			</p>\r\n			<div>\r\n				<a href=\"http://www.comsenz.com/\" target=\"_blank\">Comsenz Technology Ltd</a>\r\n				- <a href=\"");
+	templateBuilder.Append(forumurl.ToString());
+	templateBuilder.Append("archiver/index.aspx\" target=\"_blank\">简洁版本</a>\r\n			");
+	if (config.Stylejump==1)
+	{
+
+
+	if (userid!=-1 || config.Guestcachepagetimeout<=0)
+	{
+
+	templateBuilder.Append("\r\n				- <span id=\"styleswitcher\" class=\"drop\" onmouseover=\"showMenu({'ctrlid':this.id, 'pos':'21'})\" onclick=\"window.location.href='");
+	templateBuilder.Append(forumurl.ToString());
+	templateBuilder.Append("showtemplate.aspx'\">界面风格</span>\r\n				");
+	}	//end if
+
+
+	}	//end if
+
+	templateBuilder.Append("\r\n			</div>\r\n		</div>\r\n		<a title=\"Powered by Discuz!NT\" target=\"_blank\" href=\"http://nt.discuz.net\"><img border=\"0\" alt=\"Discuz!NT\" src=\"");
+	templateBuilder.Append(imagedir.ToString());
+	templateBuilder.Append("/discuznt_logo.gif\"/></a>\r\n		<p id=\"copyright\">\r\n			Powered by <strong><a href=\"http://nt.discuz.net\" target=\"_blank\" title=\"Discuz!NT\">Discuz!NT</a></strong> <em class=\"f_bold\">3.6.711</em>\r\n			");
+	if (config.Licensed==1)
+	{
+
+	templateBuilder.Append("\r\n				(<a href=\"\" onclick=\"this.href='http://nt.discuz.net/certificate/?host='+location.href.substring(0, location.href.lastIndexOf('/'))\" target=\"_blank\">Licensed</a>)\r\n			");
+	}	//end if
+
+	templateBuilder.Append("\r\n				");
+	templateBuilder.Append(config.Forumcopyright.ToString().Trim());
+	templateBuilder.Append("\r\n		</p>\r\n		<p id=\"debuginfo\" class=\"grayfont\">\r\n		");
 	if (config.Debug!=0)
 	{
 
@@ -589,7 +632,236 @@ override protected void OnInit(EventArgs e)
 
 	}	//end if
 
-	templateBuilder.Append("\r\n		</p>\r\n	</div>\r\n</div>\r\n\r\n\r\n");
+	templateBuilder.Append("\r\n		</p>\r\n	</div>\r\n</div>\r\n<a id=\"scrolltop\" href=\"javascript:;\" style=\"display:none;\" class=\"scrolltop\" onclick=\"setScrollToTop(this.id);\">TOP</a>\r\n<ul id=\"usercenter_menu\" class=\"p_pop\" style=\"display:none;\">\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercpprofile.aspx?action=avatar\">设置头像</a></li>\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercpprofile.aspx\">个人资料</a></li>\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercpnewpassword.aspx\">更改密码</a></li>\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercp.aspx\">用户组</a></li>\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercpsubscribe.aspx\">收藏夹</a></li>\r\n    <li><a href=\"");
+	templateBuilder.Append(forumpath.ToString());
+	templateBuilder.Append("usercpcreditspay.aspx\">积分</a></li>\r\n</ul>\r\n\r\n");
+	int prentid__loop__id=0;
+	foreach(string prentid in mainnavigationhassub)
+	{
+		prentid__loop__id++;
+
+	templateBuilder.Append("\r\n<ul class=\"p_pop\" id=\"menu_");
+	templateBuilder.Append(prentid.ToString());
+	templateBuilder.Append("_menu\" style=\"display: none\">\r\n");
+	int subnav__loop__id=0;
+	foreach(DataRow subnav in subnavigation.Rows)
+	{
+		subnav__loop__id++;
+
+	bool isoutput = false;
+	
+
+	if (subnav["parentid"].ToString().Trim()==prentid)
+	{
+
+
+	if (subnav["level"].ToString().Trim()=="0")
+	{
+
+	 isoutput = true;
+	
+
+	}
+	else
+	{
+
+
+	if (subnav["level"].ToString().Trim()=="1" && userid!=-1)
+	{
+
+	 isoutput = true;
+	
+
+	}
+	else
+	{
+
+	bool leveluseradmindi = true;
+	
+	 leveluseradmindi = (useradminid==3 || useradminid==1 || useradminid==2);
+	
+
+	if (subnav["level"].ToString().Trim()=="2" &&  leveluseradmindi)
+	{
+
+	 isoutput = true;
+	
+
+	}	//end if
+
+
+	if (subnav["level"].ToString().Trim()=="3" && useradminid==1)
+	{
+
+	 isoutput = true;
+	
+
+	}	//end if
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	if (isoutput)
+	{
+
+
+	if (subnav["id"].ToString().Trim()=="11" || subnav["id"].ToString().Trim()=="12")
+	{
+
+
+	if (config.Statstatus==1)
+	{
+
+	templateBuilder.Append("\r\n	" + subnav["nav"].ToString().Trim() + "\r\n        ");	continue;
+
+
+	}
+	else
+	{
+
+	continue;
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	if (subnav["id"].ToString().Trim()=="18")
+	{
+
+
+	if (config.Oltimespan>0)
+	{
+
+	templateBuilder.Append("\r\n    " + subnav["nav"].ToString().Trim() + "\r\n	");	continue;
+
+
+	}
+	else
+	{
+
+	continue;
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	if (subnav["id"].ToString().Trim()=="24")
+	{
+
+
+	if (config.Enablespace==1)
+	{
+
+	templateBuilder.Append("\r\n    " + subnav["nav"].ToString().Trim() + "\r\n 	");	continue;
+
+
+	}
+	else
+	{
+
+	continue;
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	if (subnav["id"].ToString().Trim()=="25")
+	{
+
+
+	if (config.Enablealbum==1)
+	{
+
+	templateBuilder.Append("\r\n    " + subnav["nav"].ToString().Trim() + "\r\n 	");	continue;
+
+
+	}
+	else
+	{
+
+	continue;
+
+
+	}	//end if
+
+
+	}	//end if
+
+
+	if (subnav["id"].ToString().Trim()=="26")
+	{
+
+
+	if (config.Enablemall>=1)
+	{
+
+	templateBuilder.Append("\r\n    " + subnav["nav"].ToString().Trim() + "\r\n   	");	continue;
+
+
+	}
+	else
+	{
+
+	continue;
+
+
+	}	//end if
+
+
+	}	//end if
+
+	templateBuilder.Append("\r\n    " + subnav["nav"].ToString().Trim() + "\r\n");
+	}	//end if
+
+
+	}	//end loop
+
+	templateBuilder.Append("\r\n</ul>\r\n");
+	}	//end loop
+
+
+	if (config.Stylejump==1)
+	{
+
+
+	if (userid!=-1 || config.Guestcachepagetimeout<=0)
+	{
+
+	templateBuilder.Append("\r\n	<ul id=\"styleswitcher_menu\" class=\"popupmenu_popup s_clear\" style=\"display: none;\">\r\n	");
+	templateBuilder.Append(templatelistboxoptions.ToString());
+	templateBuilder.Append("\r\n	</ul>\r\n	");
+	}	//end if
+
+
+	}	//end if
+
+
 
 
 	templateBuilder.Append("</body>\r\n</html>\r\n");

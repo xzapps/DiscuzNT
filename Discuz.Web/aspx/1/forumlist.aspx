@@ -10,8 +10,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by Discuz!NT Template Engine at 2013/11/19 13:53:05.
-		本页面代码由Discuz!NT模板引擎生成于 2013/11/19 13:53:05. 
+		This page was created by Discuz!NT Template Engine at 2014/7/31 14:03:09.
+		本页面代码由Discuz!NT模板引擎生成于 2014/7/31 14:03:09. 
 	*/
 
 	base.OnInit(e);
@@ -30,7 +30,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(config.Forumtitle.ToString().Trim());
 	templateBuilder.Append(" ");
 	templateBuilder.Append(config.Seotitle.ToString().Trim());
-	templateBuilder.Append("</title>\r\n    ");
+	templateBuilder.Append(" - Powered by Discuz!NT</title>\r\n    ");
 	}
 	else
 	{
@@ -41,12 +41,12 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(config.Forumtitle.ToString().Trim());
 	templateBuilder.Append(" ");
 	templateBuilder.Append(config.Seotitle.ToString().Trim());
-	templateBuilder.Append("</title>\r\n    ");
+	templateBuilder.Append(" - Powered by Discuz!NT</title>\r\n    ");
 	}	//end if
 
 	templateBuilder.Append("\r\n    ");
 	templateBuilder.Append(meta.ToString());
-	templateBuilder.Append("\r\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=7\" />\r\n    <link rel=\"icon\" href=\"");
+	templateBuilder.Append("\r\n    <meta name=\"generator\" content=\"Discuz!NT 3.6.711\" />\r\n    <meta name=\"author\" content=\"Discuz!NT Team and Comsenz UI Team\" />\r\n    <meta name=\"copyright\" content=\"2001-2011 Comsenz Inc.\" />\r\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=7\" />\r\n    <link rel=\"icon\" href=\"");
 	templateBuilder.Append(forumurl.ToString());
 	templateBuilder.Append("favicon.ico\" type=\"image/x-icon\" />\r\n    <link rel=\"shortcut icon\" href=\"");
 	templateBuilder.Append(forumurl.ToString());
@@ -61,9 +61,7 @@ override protected void OnInit(EventArgs e)
 
 	templateBuilder.Append("\r\n    <link rel=\"stylesheet\" href=\"");
 	templateBuilder.Append(cssdir.ToString());
-	templateBuilder.Append("/float.css\" type=\"text/css\" />\r\n    <link href=\"");
-	templateBuilder.Append(cssdir.ToString());
-	templateBuilder.Append("/other/c5.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n    ");
+	templateBuilder.Append("/float.css\" type=\"text/css\" />\r\n    ");
 	if (isnarrowpage)
 	{
 
