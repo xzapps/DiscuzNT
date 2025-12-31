@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Discuz.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{9f061b4f-5833-498d-9d8d-dd59954a5837}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Discuz.Database</RootNamespace>
+    <AssemblyName>Discuz.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\dnt_words.sql" />
+    <Build Include="dbo\Tables\dnt_users.sql" />
+    <Build Include="dbo\Tables\dnt_usergroups.sql" />
+    <Build Include="dbo\Tables\dnt_userfields.sql" />
+    <Build Include="dbo\Tables\dnt_trendstat.sql" />
+    <Build Include="dbo\Tables\dnt_topictypes.sql" />
+    <Build Include="dbo\Tables\dnt_topictags.sql" />
+    <Build Include="dbo\Tables\dnt_topictagcaches.sql" />
+    <Build Include="dbo\Tables\dnt_topics.sql" />
+    <Build Include="dbo\Tables\dnt_topicidentify.sql" />
+    <Build Include="dbo\Tables\dnt_templates.sql" />
+    <Build Include="dbo\Tables\dnt_tags.sql" />
+    <Build Include="dbo\Tables\dnt_tablelist.sql" />
+    <Build Include="dbo\Tables\dnt_statvars.sql" />
+    <Build Include="dbo\Tables\dnt_stats.sql" />
+    <Build Include="dbo\Tables\dnt_statistics.sql" />
+    <Build Include="dbo\Tables\dnt_smilies.sql" />
+    <Build Include="dbo\Tables\dnt_searchcaches.sql" />
+    <Build Include="dbo\Tables\dnt_scheduledevents.sql" />
+    <Build Include="dbo\Tables\dnt_ratelog.sql" />
+    <Build Include="dbo\Tables\dnt_posts1.sql" />
+    <Build Include="dbo\Tables\dnt_postid.sql" />
+    <Build Include="dbo\Tables\dnt_postdebatefields.sql" />
+    <Build Include="dbo\Tables\dnt_polls.sql" />
+    <Build Include="dbo\Tables\dnt_polloptions.sql" />
+    <Build Include="dbo\Tables\dnt_pms.sql" />
+    <Build Include="dbo\Tables\dnt_paymentlog.sql" />
+    <Build Include="dbo\Tables\dnt_orders.sql" />
+    <Build Include="dbo\Tables\dnt_onlinetime.sql" />
+    <Build Include="dbo\Tables\dnt_onlinelist.sql" />
+    <Build Include="dbo\Tables\dnt_online.sql" />
+    <Build Include="dbo\Tables\dnt_notices.sql" />
+    <Build Include="dbo\Tables\dnt_navs.sql" />
+    <Build Include="dbo\Tables\dnt_mytopics.sql" />
+    <Build Include="dbo\Tables\dnt_myposts.sql" />
+    <Build Include="dbo\Tables\dnt_myattachments.sql" />
+    <Build Include="dbo\Tables\dnt_moderators.sql" />
+    <Build Include="dbo\Tables\dnt_moderatormanagelog.sql" />
+    <Build Include="dbo\Tables\dnt_medalslog.sql" />
+    <Build Include="dbo\Tables\dnt_medals.sql" />
+    <Build Include="dbo\Tables\dnt_locations.sql" />
+    <Build Include="dbo\Tables\dnt_invitation.sql" />
+    <Build Include="dbo\Tables\dnt_help.sql" />
+    <Build Include="dbo\Tables\dnt_forums.sql" />
+    <Build Include="dbo\Tables\dnt_forumlinks.sql" />
+    <Build Include="dbo\Tables\dnt_forumfields.sql" />
+    <Build Include="dbo\Tables\dnt_favorites.sql" />
+    <Build Include="dbo\Tables\dnt_failedlogins.sql" />
+    <Build Include="dbo\Tables\dnt_debates.sql" />
+    <Build Include="dbo\Tables\dnt_debatediggs.sql" />
+    <Build Include="dbo\Tables\dnt_creditslog.sql" />
+    <Build Include="dbo\Tables\dnt_bonuslog.sql" />
+    <Build Include="dbo\Tables\dnt_bbcodes.sql" />
+    <Build Include="dbo\Tables\dnt_banned.sql" />
+    <Build Include="dbo\Tables\dnt_attachtypes.sql" />
+    <Build Include="dbo\Tables\dnt_attachpaymentlog.sql" />
+    <Build Include="dbo\Tables\dnt_attachments.sql" />
+    <Build Include="dbo\Tables\dnt_announcements.sql" />
+    <Build Include="dbo\Tables\dnt_advertisements.sql" />
+    <Build Include="dbo\Tables\dnt_adminvisitlog.sql" />
+    <Build Include="dbo\Tables\dnt_admingroups.sql" />
+    <Build Include="dbo\Functions\dnt_split.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateuserprofile.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateuserpreference.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateuserpostcount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateuserpassword.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateuseronlinestates.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateusergroup.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateuserforumsetting.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateuserfavoriteviewtime.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateusercredits.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateuserauthstr.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateuserapp.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateuser.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatetrendstat.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatetopicviewcount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatetopicposter.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatetopiclastposterid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatetopic.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatepostposter.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatepost1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateorderinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateonlinenewinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateonlinelist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateonlineaction.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatemytopic.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatemypost.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatemoderatorname.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatelastpostoftopic.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateinvitecodesuccesscount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateforumsmoderators.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateforumsinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateforum.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updatedebate.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateBanUser.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateattachmenttidtoanothertopic.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateattachmentinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateattachmentdownloads.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateattachment.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateapplication.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateallfieldattachmentinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_updateadmingroup.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_shrinklog.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_setlastexecutescheduledeventdatetime.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_setcurrenttopics.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_setapplicationflag.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_sendmyinvite.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_revisedebatetopicdiggs.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_resetuserspostcount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_resetuserdigestposts.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_resettodayposts.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_resetstatistic.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_resetLastRepliesInfoOftopics.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_resetlastpostinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_resetforumstopics.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_resetforumsposts.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_resetclearmove.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_removeuserapp.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_removeapplication.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_passpost.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_passfriendship.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_neatenrelatetopic.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_isinvitecodeexist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_isfriendshipexist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_insertforumsinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_ignoremyinvite.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_ignorefriendshiprequest.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getusers.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserlog.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserlistbygroupid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserlistbyemail.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserinvitecodecount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserinstalledappid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserinstalledapp.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserinfobyip.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserinfobyemail.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuseridbyemail.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserfriendslistbycondition.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserfriendslist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserfriendshiprequestinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserfriendscountbycondition.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserfriendscount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserfriendrequestlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserfriendrequestcount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getuserappinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getUnAuditPostList.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getunauditpost.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getunauditnewtopicbycondition.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettotaltopiccount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopusers.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettoptopiclist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopictids.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopictags.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopics.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopiclistbyvieworreplies.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopiclistbytypedate.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopiclistbytype.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopiclistbytag.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopiclistbydate.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopiclistbycondition.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopiclist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopicinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopiccountbytype.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopiccountbycondition.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopiccount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettopforumfids.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettodayusercreatedinvitecode.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettodayuploadedfilesize.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettodaypostcountbyuid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gettaginfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getsubforumcount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getsitemapnewtopics.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getsinglepost1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getshortuserinfo.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getreplypid1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getrelatedtopics.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getrateloglist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getratecount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getpostlistbycondition1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getpostlist1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getpostcountbyuid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getpostcountbycondition1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getpost1tree.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getpost1count.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getpolllist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getpmlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getpmcount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getparentidbyfid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getorderscount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getorderlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getorderbyordercode.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getonlineuserlistbyfid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getonlineuserlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getonlineuserbyip.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getonlineuser.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getonlineuercount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getonlineregistercount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getonlinegroupicontable.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getnousedforumattachment.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getnousedattachmentlistbyuid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getnoticecountbyuid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getnoticecount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getnoticebyuid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getnewtopics1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getnewnoticecountbyuid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getmytopics.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getmyposts.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getmyattachmentsbytype.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getmyattachments.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getmodtopiccountbytidlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getmodpostcountbypidlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getmaxandmintid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getmainforum.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getlastposttid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getlastpostlist1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getlastpostbyfid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getlastexecutescheduledeventdatetime.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getinvitecodelistbyuid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getinvitecode.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getindexforumlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gethottopicslist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gethottopicscount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_gethotimages.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getfriendshipchangelog.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getforumstable.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getforumnewtopics.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getfirstpost1id.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getfirstimageattachbytid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getfavoriteslist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getfavoritescount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getexpiredonlineuserlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_geteditpostattachlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getdesignatepostcount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getdebatepostlist1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattentiontopics.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattachpaymentlogbyuid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattachpaymentlogbyaid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattAchmentlistByUid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattachmentlistbytidlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattachmentlistbytid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattachmentlistbypidlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattachmentlistbypid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattachmentlistbyaid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattachmentcountbytid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattachmentcountbypid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getattachenmtinfobyaid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getappinvitelist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getappinvitecount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getalltoptopiclist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_getalltopiccount.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deluserallinf.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deletetopictags.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deletetopicbytidlist1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deletepostsbyuidanddays.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deletepost1bypid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deleteonlineusers.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deletenousedforumattachment.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deletemyinvitebyappid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deleteinvitecode.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deletefriendship.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deleteforumsbyfid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deleteAttachmentByUid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deleteattachmentbytidlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deleteattachmentbytid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deleteattachmentbypid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deleteattachmentbyaidlist.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_deleteattachmentbyaid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createuser.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createtopictags.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createtopic.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createtags.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createsearchcache.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createpost1.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createpm.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createorder.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createonlineuser.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createnotice.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createnewfriendshiprequest.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createinvitecode.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createfavorite.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createdebatepostexpand.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createattachment.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_createadmingroup.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_clearexpireinvitecode.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_clearexpirecreditorders.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_checkpasswordbyusername.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_checkpasswordbyuid.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_checkpasswordandsecques.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_checkemailandsecques.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_adduserlog.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_addusergroup.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_adduserapp.sql" />
+    <Build Include="dbo\Stored Procedures\dnt_addparentforumtopics.sql" />
+  </ItemGroup>
+</Project>

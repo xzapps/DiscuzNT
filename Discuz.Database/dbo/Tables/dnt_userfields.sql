@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[dnt_userfields] (
+    [uid]          INT             NOT NULL,
+    [website]      NVARCHAR (80)   CONSTRAINT [DF_dnt_userfields_website] DEFAULT ('') NOT NULL,
+    [icq]          VARCHAR (12)    CONSTRAINT [DF_dnt_userfields_icq] DEFAULT ('') NOT NULL,
+    [qq]           VARCHAR (12)    CONSTRAINT [DF_dnt_userfields_qq] DEFAULT ('') NOT NULL,
+    [yahoo]        VARCHAR (40)    CONSTRAINT [DF_dnt_userfields_yahoo] DEFAULT ('') NOT NULL,
+    [msn]          VARCHAR (40)    CONSTRAINT [DF_dnt_userfields_msn] DEFAULT ('') NOT NULL,
+    [skype]        VARCHAR (40)    CONSTRAINT [DF_dnt_userfields_skype_] DEFAULT ('') NOT NULL,
+    [location]     NVARCHAR (50)   CONSTRAINT [DF_dnt_userfields_location] DEFAULT ('') NOT NULL,
+    [customstatus] NVARCHAR (50)   CONSTRAINT [DF_dnt_userfields_customstatus] DEFAULT ('') NOT NULL,
+    [avatar]       NVARCHAR (255)  CONSTRAINT [DF_dnt_userfields_avatar] DEFAULT ('avatars\common\0.gif') NOT NULL,
+    [avatarwidth]  INT             CONSTRAINT [DF_dnt_userfields_avatarwidth] DEFAULT ((60)) NOT NULL,
+    [avatarheight] INT             CONSTRAINT [DF_dnt_userfields_avatarheight] DEFAULT ((60)) NOT NULL,
+    [medals]       VARCHAR (300)   CONSTRAINT [DF_dnt_userfields_medals] DEFAULT ('') NOT NULL,
+    [bio]          NVARCHAR (500)  CONSTRAINT [DF_dnt_userfields_bio] DEFAULT ('') NOT NULL,
+    [signature]    NVARCHAR (500)  CONSTRAINT [DF_dnt_userfields_signature] DEFAULT ('') NOT NULL,
+    [sightml]      NVARCHAR (1000) CONSTRAINT [DF_dnt_userfields_sightml] DEFAULT ('') NOT NULL,
+    [authstr]      VARCHAR (20)    CONSTRAINT [DF_dnt_userfields_authstr] DEFAULT ('') NOT NULL,
+    [authtime]     SMALLDATETIME   CONSTRAINT [DF_dnt_userfields_authtime] DEFAULT (getdate()) NOT NULL,
+    [authflag]     TINYINT         CONSTRAINT [DF_dnt_userfields_authflag] DEFAULT ((0)) NOT NULL,
+    [realname]     NVARCHAR (10)   CONSTRAINT [DF_dnt_userfields_realname] DEFAULT ('') NOT NULL,
+    [idcard]       VARCHAR (20)    CONSTRAINT [DF_dnt_userfields_idcard] DEFAULT ('') NOT NULL,
+    [mobile]       VARCHAR (20)    CONSTRAINT [DF_dnt_userfields_mobile] DEFAULT ('') NOT NULL,
+    [phone]        VARCHAR (20)    CONSTRAINT [DF_dnt_userfields_phone] DEFAULT ('') NOT NULL,
+    [ignorepm]     NVARCHAR (1000) CONSTRAINT [DF_dnt_userfields_ignorepm] DEFAULT ('') NOT NULL,
+    CONSTRAINT [PK_dnt_userfields] PRIMARY KEY CLUSTERED ([uid] ASC)
+);
+

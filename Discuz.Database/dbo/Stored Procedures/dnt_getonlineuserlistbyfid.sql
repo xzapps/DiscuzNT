@@ -1,0 +1,27 @@
+﻿
+CREATE PROCEDURE [dnt_getonlineuserlistbyfid]
+@fid int
+AS
+SELECT [olid]
+      ,[userid]
+      ,[ip]
+      ,[username]
+      ,[nickname]
+      ,[password]
+      ,[groupid]
+      ,[olimg]
+      ,[adminid]
+      ,[invisible]
+      ,[action]
+      ,[lastactivity]
+      ,[lastposttime]
+      ,[lastpostpmtime]
+      ,[lastsearchtime]
+      ,[lastupdatetime]
+      ,[forumid]
+      ,[forumname]
+      ,[titleid]
+      ,[title]
+      ,[verifycode]
+      ,[newpms]
+      ,[newnotices] FROM [dnt_online] WHERE [forumid]=@fid

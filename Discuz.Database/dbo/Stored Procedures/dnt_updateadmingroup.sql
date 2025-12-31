@@ -1,0 +1,40 @@
+﻿
+CREATE PROCEDURE [dnt_updateadmingroup]
+	@admingid smallint,
+	@alloweditpost tinyint,
+	@alloweditpoll tinyint,
+	@allowstickthread tinyint,
+	@allowmodpost tinyint,
+	@allowdelpost tinyint,
+	@allowmassprune tinyint,
+	@allowrefund tinyint,
+	@allowcensorword tinyint,
+	@allowviewip tinyint,
+	@allowbanip tinyint,
+	@allowedituser tinyint,
+	@allowmoduser tinyint,
+	@allowbanuser tinyint,
+	@allowpostannounce tinyint,
+	@allowviewlog tinyint,
+	@disablepostctrl tinyint,
+	@allowviewrealname tinyint
+AS
+UPDATE [dnt_admingroups] SET 
+	[alloweditpost]=@alloweditpost,
+	[alloweditpoll]=@alloweditpoll,
+	[allowstickthread]=@allowstickthread,
+	[allowmodpost]=@allowmodpost,
+	[allowdelpost]=@allowdelpost,
+	[allowmassprune]=@allowmassprune,
+	[allowrefund]=@allowrefund,
+	[allowcensorword]=@allowcensorword,
+	[allowviewip]=@allowviewip,
+	[allowbanip]=@allowbanip,
+	[allowedituser]=@allowedituser,
+	[allowmoduser]=@allowmoduser,
+	[allowbanuser]=@allowbanuser,
+	[allowpostannounce]=@allowpostannounce,
+	[allowviewlog]=@allowviewlog,
+	[disablepostctrl]=@disablepostctrl,
+	[allowviewrealname]=@allowviewrealname
+WHERE [admingid]=@admingid
